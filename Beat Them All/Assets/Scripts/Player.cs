@@ -1,123 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour
-{
+public class Player : MonoBehaviour {
 
-    //Player Controls
-    public Transform playerBody;
-    public Transform playerFeet;
-    public SpriteRenderer playerSprite;
-    //public Transform attackRayStart;
 
-    //Animation Controls
-    public Animator myAnimator;
+    public Vector2 speed = new Vector2(50, 50);
 
-    //Movement Controls
-    public float moveSpeed;
-    private Vector2 playerAxisMove;
-    public bool isJumping;
-    public bool isAttacking;
+    private Vector2 movement;
 
-    // Update is called once per frame
     void Update()
     {
+        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -8f, 8.1f), Mathf.Clamp(transform.position.y, -3.5f, -0.5f));
 
-        playerSprite.sortingOrder = -(int)playerFeet.position.y;
+        float inputX = Input.GetAxis("Horizontal");
+        float inputY = Input.GetAxis("Vertical");
 
-        //-----------------------
-        //Movement Section
-        //-----------------------
-
-        //As long as we are not attacking, we can move.
-        if (!isAttacking)
-        {
-
-            //This will clamp how far up/down/left/right we can go in LOCAL space
-            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -4, 10), Mathf.Clamp(transform.position.y,-6, -1f));
-
-            //Grab our movement axis
-            playerAxisMove = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-            //Move our player around
-            transform.Translate(playerAxisMove * moveSpeed * Time.deltaTime);
-
-            //Checks to see which way our player is going and flips their facing direction
-            if (playerAxisMove.x > 0)
-            {
-                playerBody.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-            }
-            else if (playerAxisMove.x < 0)
-            {
-                playerBody.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-            }
-
-            //Checks to see if our player is moving
-            //If they are, activate the "walking" variable
-            if (Mathf.Abs(playerAxisMove.x) > 0 || Mathf.Abs(playerAxisMove.y) > 0)
-            {
-                myAnimator.SetBool("isWalking", true);
-            }
-            else
-            {
-                myAnimator.SetBool("isWalking", false);
-            }
-        }
-
-        //-----------------------
-        //Button Detect Section
-        //-----------------------
-
-        //Did we jump?
-        if (Input.GetButtonDown("Jump") && !isJumping && !isAttacking)
-        {
-            isJumping = true;
-            myAnimator.SetTrigger("jumped");
-        }
-
-        //Did we attack?
-        if (Input.GetButtonDown("Fire1") && !isJumping && !isAttacking)
-        {
-            isAttacking = true;
-            myAnimator.SetTrigger("attacked");
-        }
+        movement = new Vector2(
+            speed.x * inputX,
+            speed.y * inputY);
 
     }
 
-    //This is activated via an event in the Player_Jump animation
-    void JumpCompleted()
+    void FixedUpdate()
     {
-        isJumping = false;
+        GetComponent<Rigidbody2D>().velocity = movement;
     }
 
-    //This is activated via an event in the Player_Attack animation
-    void AttackCompleted()
-    {
-        isAttacking = false; ;
-    }
-
-    //This is activatd via an event in the Player_Attack animation
-    /*void Attacking()
-    {
-        //Shot a ray out in the "right" direction.
-        //As we are rotating our player-body, we multiply Vector2.right by the rotation in order to get the correct "right" direction
-        RaycastHit2D hit = Physics2D.Raycast(attackRayStart.position, playerBody.rotation * Vector2.right, 2);
-
-        //If our collider is not null, then...
-        if (hit.collider != null)
-        {
-
-            //Get the difference between our Y position and the hit colliders Y position
-            float yDifference = transform.position.y - hit.collider.transform.position.y;
-
-            //If the difference isn't to far in either direction, then...
-            if (yDifference < 0.85f && yDifference > -0.85f)
-            {
-
-                //Call the enemy script, and tell it that we hit them!
-                hit.collider.GetComponent<EnemyController>().HitEnemy();
-            }
-
-        }*/
-    
 }
