@@ -44,10 +44,20 @@ public class PlayerController : MonoBehaviour
             moving.y = -1;
             animator.SetInteger("AnimState", 1);
         }
+
+        if(Input.GetKeyUp("right") || Input.GetKeyUp("left"))
+        {
+            animator.SetInteger("AnimState", 0);
+        }
         
+        if(Input.GetKeyUp("up") || Input.GetKeyUp("down"))
+        {
+            animator.SetInteger("AnimState", 0);
+        }
+
         if (Input.GetKeyDown("space"))
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 50);
+            GetComponent<Rigidbody2D>().AddForce(moving,ForceMode2D.Impulse);
             animator.SetInteger("AnimState", 2);
         }
     }
