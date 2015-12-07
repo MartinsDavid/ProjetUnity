@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public Transform playerBody;
     private Animator animator;
 
+    public float gJump = -2.5f;
+
     // Use this for initialization
     void Start()
     {
@@ -55,9 +57,8 @@ public class PlayerController : MonoBehaviour
             animator.SetInteger("AnimState", 0);
         }
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKey("space"))
         {
-            GetComponent<Rigidbody2D>().AddForce(moving,ForceMode2D.Impulse);
             animator.SetInteger("AnimState", 2);
         }
     }
