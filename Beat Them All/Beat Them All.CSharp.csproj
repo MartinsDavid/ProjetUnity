@@ -51,17 +51,11 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Analytics">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
@@ -75,10 +69,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Collectable.cs" />
-    <Compile Include="Assets\Scripts\EnemyController.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\CreditsScript.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\IntroductionScript.cs" />
+    <Compile Include="Assets\Scripts\Menu\ActiveStateToggler.cs" />
+    <Compile Include="Assets\Scripts\Menu\ApplicationManager.cs" />
+    <Compile Include="Assets\Scripts\Menu\ChangeColor.cs" />
+    <Compile Include="Assets\Scripts\Menu\DragMe.cs" />
+    <Compile Include="Assets\Scripts\Menu\DragPanel.cs" />
+    <Compile Include="Assets\Scripts\Menu\DropMe.cs" />
+    <Compile Include="Assets\Scripts\Menu\PanelManager.cs" />
+    <Compile Include="Assets\Scripts\Menu\ResizePanel.cs" />
+    <Compile Include="Assets\Scripts\Menu\ScrollDetailTexture.cs" />
+    <Compile Include="Assets\Scripts\Menu\ShowSliderValue.cs" />
+    <Compile Include="Assets\Scripts\Menu\TiltWindow.cs" />
+    <Compile Include="Assets\Scripts\MenuScript.cs" />
+    <Compile Include="Assets\Scripts\PauseScript.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\RandomSprite.cs" />
+    <Compile Include="Assets\Scripts\StoryScript.cs" />
+    <Compile Include="Assets\Scripts\test.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
