@@ -75,10 +75,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Collectable.cs" />
+    <Compile Include="Assets\Scripts\CreditsScript.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\HealthScript.cs" />
+    <Compile Include="Assets\Scripts\IntroductionScript.cs" />
+    <Compile Include="Assets\Scripts\Menu\ActiveStateToggler.cs" />
+    <Compile Include="Assets\Scripts\Menu\ApplicationManager.cs" />
+    <Compile Include="Assets\Scripts\Menu\ChangeColor.cs" />
+    <Compile Include="Assets\Scripts\Menu\DragMe.cs" />
+    <Compile Include="Assets\Scripts\Menu\DragPanel.cs" />
+    <Compile Include="Assets\Scripts\Menu\DropMe.cs" />
+    <Compile Include="Assets\Scripts\Menu\PanelManager.cs" />
+    <Compile Include="Assets\Scripts\Menu\ResizePanel.cs" />
+    <Compile Include="Assets\Scripts\Menu\ScrollDetailTexture.cs" />
+    <Compile Include="Assets\Scripts\Menu\ShowSliderValue.cs" />
+    <Compile Include="Assets\Scripts\Menu\TiltWindow.cs" />
+    <Compile Include="Assets\Scripts\MenuScript.cs" />
+    <Compile Include="Assets\Scripts\MoveShotScript.cs" />
+    <Compile Include="Assets\Scripts\PauseScript.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\RandomSprite.cs" />
+    <Compile Include="Assets\Scripts\ShotScript.cs" />
+    <Compile Include="Assets\Scripts\StoryScript.cs" />
+    <Compile Include="Assets\Scripts\WeaponScript.cs" />
+    <Compile Include="Assets\Scripts\test.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

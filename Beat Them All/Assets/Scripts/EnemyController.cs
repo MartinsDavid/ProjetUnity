@@ -19,6 +19,14 @@ public class EnemyController : MonoBehaviour
     public SpriteRenderer enemySprite;
     public Animator enemyAnimator;
 
+    private WeaponScript weapon;
+
+    void Awake()
+    {
+        // Retrieve the weapon only once
+        weapon = GetComponentInChildren<WeaponScript>();
+    }
+
     void Start()
     {
         //Find the player
@@ -26,14 +34,23 @@ public class EnemyController : MonoBehaviour
         //Find attackPoints 1 and 2
         attackPoint1 = GameObject.Find("AttackPoint1").transform;
         attackPoint2 = GameObject.Find("AttackPoint2").transform;
+
     }
 
     void Update()
     {
         //Set the enemy sprite order equal to our enemy's feet Y position
         enemySprite.sortingOrder = -(int)enemyFeet.position.y;
-    }
 
+
+        // Auto-fire
+        if (weapon != null && weapon.CanAttack)
+        {
+            weapon.Attack(true);
+        }
+
+
+    }
 
     void FixedUpdate()
     {
@@ -67,12 +84,16 @@ public class EnemyController : MonoBehaviour
             enemyBody.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
 
+        /*     -------ANCIENNES LIGNES A SUPPRIMER--------
         //Subtracting the attack point position by ours will give use a general direction
-        Vector2 tempDir = playerBody.position - transform.position ;
+        Vector2 tempDir = tempTrans.position - transform.position ;
         //Normalizing the general direction will given us the correct direction
         tempDir = tempDir.normalized;
         //Move towards the attack point
         transform.Translate(tempDir * moveSpeed * Time.deltaTime);
+        */
+
+        enemyBody.position += (tempTrans.position - enemyBody.position).normalized * moveSpeed * Time.deltaTime;
 
         enemyAnimator.SetInteger("AnimState", 1);
     }
@@ -82,4 +103,5 @@ public class EnemyController : MonoBehaviour
     {
         enemyAnimator.SetTrigger("gotHit");
     }
+
 }
