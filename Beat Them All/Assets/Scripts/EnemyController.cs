@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
     //Misc Controls
     public Transform enemyBody;
     public Transform enemyFeet;
+    public Transform enemyWeapon;
     public SpriteRenderer enemySprite;
     public Animator enemyAnimator;
 
@@ -42,13 +43,15 @@ public class EnemyController : MonoBehaviour
         //Set the enemy sprite order equal to our enemy's feet Y position
         enemySprite.sortingOrder = -(int)enemyFeet.position.y;
 
-
         // Auto-fire
-        if (weapon != null && weapon.CanAttack)
+        enemyWeapon = GetComponentInChildren<Transform>();
+        if (enemyWeapon.position.y < playerBody.position.y + 0.5f && enemyWeapon.position.y > playerBody.position.y - 0.5f)
         {
-            weapon.Attack(true);
+            if (weapon != null && weapon.CanAttack)
+            {
+                weapon.Attack(true);
+            }
         }
-
 
     }
 
@@ -61,14 +64,23 @@ public class EnemyController : MonoBehaviour
         //Find the closest attack point, then move towards it
         if (attackDistance1 < attackDistance2)
         {
-            if (attackDistance1 > 0.1f)
+            if (attackDistance1 > 5.2f)
             {
                 MoveInDirection(attackPoint1);
             }
+            else
+            {
+                enemyAnimator.SetInteger("AnimState", 0);
+            }
         }
-        else if (attackDistance2 > 0.1f)
+        else if (attackDistance2 > 5.2f)
         {
             MoveInDirection(attackPoint2);
+        }
+
+        else
+        {
+            enemyAnimator.SetInteger("AnimState", 0);
         }
     }
 
