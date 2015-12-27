@@ -43,8 +43,18 @@ public class EnemyController : MonoBehaviour
         //Set the enemy sprite order equal to our enemy's feet Y position
         enemySprite.sortingOrder = -(int)enemyFeet.position.y;
 
-        // Auto-fire
-        enemyWeapon = GetComponentInChildren<Transform>();
+        if (transform.position.x < playerBody.position.x)
+        {
+            enemyBody.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+        }
+        else if (transform.position.x > playerBody.position.x)
+        {
+            enemyBody.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        }
+
+            // Auto-fire
+            enemyWeapon = GetComponentInChildren<Transform>();
+
         if (enemyWeapon.position.y < playerBody.position.y + 0.5f && enemyWeapon.position.y > playerBody.position.y - 0.5f)
         {
             if (weapon != null && weapon.CanAttack)
@@ -64,7 +74,7 @@ public class EnemyController : MonoBehaviour
         //Find the closest attack point, then move towards it
         if (attackDistance1 < attackDistance2)
         {
-            if (attackDistance1 > 5.2f)
+            if (attackDistance1 > 0.3f)
             {
                 MoveInDirection(attackPoint1);
             }
@@ -73,7 +83,7 @@ public class EnemyController : MonoBehaviour
                 enemyAnimator.SetInteger("AnimState", 0);
             }
         }
-        else if (attackDistance2 > 5.2f)
+        else if (attackDistance2 > 0.3f)
         {
             MoveInDirection(attackPoint2);
         }
@@ -87,24 +97,6 @@ public class EnemyController : MonoBehaviour
     //Move towards the given attack point
     private void MoveInDirection(Transform tempTrans)
     {
-        if (transform.position.x < playerBody.position.x)
-        {
-            enemyBody.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-        }
-        else if (transform.position.x > playerBody.position.x)
-        {
-            enemyBody.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-        }
-
-        /*     -------ANCIENNES LIGNES A SUPPRIMER--------
-        //Subtracting the attack point position by ours will give use a general direction
-        Vector2 tempDir = tempTrans.position - transform.position ;
-        //Normalizing the general direction will given us the correct direction
-        tempDir = tempDir.normalized;
-        //Move towards the attack point
-        transform.Translate(tempDir * moveSpeed * Time.deltaTime);
-        */
-
         enemyBody.position += (tempTrans.position - enemyBody.position).normalized * moveSpeed * Time.deltaTime;
 
         enemyAnimator.SetInteger("AnimState", 1);
