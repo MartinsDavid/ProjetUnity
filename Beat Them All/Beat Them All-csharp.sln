@@ -1,9 +1,9 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{CDC59F7F-117F-2FBF-6EBE-09480867DADE}") = "Beat Them All", "Assembly-CSharp.csproj", "{259FB327-B611-03BA-8BF0-DB353433B4C9}"
+Project("{CDC59F7F-117F-2FBF-6EBE-09480867DADE}") = "Beat Them All", "Assembly-CSharp-vs.csproj", "{259FB327-B611-03BA-8BF0-DB353433B4C9}"
 EndProject
-Project("{CDC59F7F-117F-2FBF-6EBE-09480867DADE}") = "Beat Them All", "Assembly-CSharp-Editor.csproj", "{0B43D9A3-EA4C-F182-F813-446CBDAC8C68}"
+Project("{CDC59F7F-117F-2FBF-6EBE-09480867DADE}") = "Beat Them All", "Assembly-CSharp-Editor-vs.csproj", "{0B43D9A3-EA4C-F182-F813-446CBDAC8C68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,7 +23,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-									GlobalSection(MonoDevelopProperties) = preSolution
+										GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
