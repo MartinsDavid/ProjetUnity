@@ -39,6 +39,13 @@ public class PauseScript : MonoBehaviour {
         menuOpen = !menuOpen;
         for (int i = 0; i < menuElement.Length; i++)
             menuElement[i].SetActive(menuOpen);
+		if (menuOpen) {
+			Time.timeScale = 0;
+		}
+		else
+		{
+			Time.timeScale = 1;
+		}
     }
 
     public void Resume()
