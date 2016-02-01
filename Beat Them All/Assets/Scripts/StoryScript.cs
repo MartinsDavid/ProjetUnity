@@ -11,8 +11,8 @@ public class StoryScript : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
-    }
+		StartCoroutine(LoadLevel());
+	}
 
     // Update is called once per frame
     void Update()
@@ -29,8 +29,9 @@ public class StoryScript : MonoBehaviour {
 
     IEnumerator LoadLevel()
     {
-        yield return new WaitForSeconds(7);
-        Application.LoadLevel(level);
+        yield return new WaitForSeconds(5);
+        //Application.LoadLevel(level);
+		DPLoadScreen.Instance.LoadLevel("MainScene", true, "LoadScreen");
     }
 
 }

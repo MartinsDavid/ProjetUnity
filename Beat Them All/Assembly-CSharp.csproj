@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\ClickToContinue.cs" />
      <Compile Include="Assets\Scripts\Collectable.cs" />
      <Compile Include="Assets\Scripts\CreditsScript.cs" />
+     <Compile Include="Assets\Scripts\DPLoadScreen.cs" />
      <Compile Include="Assets\Scripts\DisplayRestartText.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\HealthBarScript.cs" />
@@ -71,6 +72,8 @@
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PointsScript.cs" />
+     <Compile Include="Assets\Scripts\PressAnyKeyToContinue.cs" />
+     <Compile Include="Assets\Scripts\ProgressBar.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\RandomSprite.cs" />
      <Compile Include="Assets\Scripts\ScoreScript.cs" />
