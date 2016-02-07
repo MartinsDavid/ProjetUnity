@@ -19,13 +19,22 @@ public class EnemyController : MonoBehaviour
     public Transform enemyWeapon;
     public SpriteRenderer enemySprite;
     public Animator enemyAnimator;
+    public Animator anim;
 
     private WeaponScript weapon;
+
+
+    public int curHealth = 5;
+    public int maxHealth = 10;
+
+
 
     void Awake()
     {
         // Retrieve the weapon only once
         weapon = GetComponentInChildren<WeaponScript>();
+        anim = gameObject.GetComponent<Animator>();
+
     }
 
     void Start()
@@ -36,6 +45,7 @@ public class EnemyController : MonoBehaviour
         attackPoint1 = GameObject.Find("AttackPoint1").transform;
         attackPoint2 = GameObject.Find("AttackPoint2").transform;
 
+        curHealth = maxHealth;
     }
 
     void Update()
@@ -61,6 +71,11 @@ public class EnemyController : MonoBehaviour
             {
                 weapon.Attack(true);
             }
+        }
+
+        if(curHealth <= 0)
+        {
+            Destroy(gameObject);
         }
 
     }
@@ -102,10 +117,10 @@ public class EnemyController : MonoBehaviour
         enemyAnimator.SetInteger("AnimState", 1);
     }
 
-    //Hit the enemy!
-    public void HitEnemy()
+    public void Damage(int damage)
     {
-        enemyAnimator.SetTrigger("gotHit");
+        curHealth -= damage;
+        gameObject.GetComponent<Animation>().Play("Enemy_hit");
     }
 
 }
