@@ -62,8 +62,8 @@ public class EnemyController : MonoBehaviour
             enemyBody.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
 
-            // Auto-fire
-            enemyWeapon = GetComponentInChildren<Transform>();
+        // Auto-fire
+        enemyWeapon = GetComponentInChildren<Transform>();
 
         if (enemyWeapon.position.y < playerBody.position.y + 0.5f && enemyWeapon.position.y > playerBody.position.y - 0.5f)
         {
@@ -73,7 +73,7 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        if(curHealth <= 0)
+        if (curHealth <= 0)
         {
             Destroy(gameObject);
         }

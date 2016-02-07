@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public Transform playerBody;
     private Animator animator;
     public float gJump = -2.5f;
-    
+
     static float deplacementHorizontal = 0;
     static float deplacementVertical = 0;
     delegate void DeplacementDelegate(Vector2 moving, bool keyWasHandled, Transform playerBody, Animator animator);
@@ -137,7 +137,7 @@ public class PlayerController : MonoBehaviour
             }
             anim.SetBool("Attacking", attacking);
         }
-        
+
 
         return handler;
     }
@@ -463,7 +463,7 @@ public class PlayerController : MonoBehaviour
             handler = deplacementsDelegateClavier(moving, keyWasHandled, playerBody, animator);
         }
     }
-    
+
 
 
     //XBOX CONTROLLER
