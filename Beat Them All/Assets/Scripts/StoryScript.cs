@@ -22,16 +22,16 @@ public class StoryScript : MonoBehaviour {
             Application.LoadLevel(level);
 
         title.transform.Translate(Vector3.forward * Time.deltaTime * speed);
-        text.transform.Translate(Vector3.up * Time.deltaTime * speed / 4);
+        text.transform.Translate(Vector3.up * Time.deltaTime * speed /8);
+		text.transform.Translate(Vector3.forward * Time.deltaTime * speed /32);
 
 
     }
 
     IEnumerator LoadLevel()
     {
-        yield return new WaitForSeconds(5);
-        //Application.LoadLevel(level);
-		DPLoadScreen.Instance.LoadLevel("MainScene", true, "LoadScreen");
+        yield return new WaitForSeconds(30);
+		DPLoadScreen.Instance.LoadLevel("MainScene", true, level);
     }
 
 }
