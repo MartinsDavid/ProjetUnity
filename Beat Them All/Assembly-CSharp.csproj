@@ -55,6 +55,8 @@
      <Compile Include="Assets\Scripts\HealthBarScript.cs" />
      <Compile Include="Assets\Scripts\HeartScript.cs" />
      <Compile Include="Assets\Scripts\IntroductionScript.cs" />
+     <Compile Include="Assets\Scripts\Lang.cs" />
+     <Compile Include="Assets\Scripts\LanguageMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\Menu\ApplicationManager.cs" />
      <Compile Include="Assets\Scripts\Menu\ChangeColor.cs" />
@@ -79,9 +81,14 @@
      <Compile Include="Assets\Scripts\ScoreScript.cs" />
      <Compile Include="Assets\Scripts\ShotScript.cs" />
      <Compile Include="Assets\Scripts\StoryScript.cs" />
+     <Compile Include="Assets\Scripts\Utils\SimpleJSON.cs" />
+     <Compile Include="Assets\Scripts\Utils\Singleton.cs" />
      <Compile Include="Assets\Scripts\WeaponScript.cs" />
      <Compile Include="Assets\Scripts\test.cs" />
+     <Compile Include="Assets\demo.cs" />
+     <None Include="Assets\Resources\lang.fr.txt" />
      <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
+     <None Include="Assets\Resources\lang.en.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -1,0 +1,9 @@
+[
+	["game.menu", "menu"]
+	["game.playGame", "jouer"],
+	["game.settings", "options"],
+	["game.credits", "credits"],
+	["game.quit", "quitter"]
+	["game.language", "langage"]
+	["game.back", "retour"]
+]

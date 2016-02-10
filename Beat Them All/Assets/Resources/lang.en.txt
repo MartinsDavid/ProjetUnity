@@ -1,0 +1,11 @@
+[
+	["game.menu", "menu"
+	["game.playGame", "play game"],
+	["game.settings", "settings"],
+	["game.credits", "credits"],
+	["game.quit", "quit"]
+	
+	["game.language", "language"]
+	["game.back", "back"]
+	
+]

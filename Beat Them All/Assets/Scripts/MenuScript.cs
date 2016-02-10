@@ -45,7 +45,7 @@ public class MenuScript : MonoBehaviour {
 		quitMenu.enabled = false;
 
 		optionsMenu = optionsMenu.GetComponent<Canvas> ();
-		test = test.GetComponent<Button>();
+		//test = test.GetComponent<Button>();
 
 
 	}

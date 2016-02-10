@@ -1,0 +1,49 @@
+Initialize engine version: 5.1.1f1 (2046fc06d4d8)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: NVIDIA GeForce 210  (ID=0xa65)
+    Vendor:   NVIDIA
+    VRAM:     466 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.066 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\System.dll (this message is harmless)
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.311579 ms
+
+Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 197.
+Total: 0.337817 ms (FindLiveObjects: 0.027445 ms CreateObjectMapping: 0.032117 ms MarkObjects: 0.221318 ms  DeleteObjects: 0.055475 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.734321 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 225.
+Total: 0.387453 ms (FindLiveObjects: 0.027445 ms CreateObjectMapping: 0.029489 ms MarkObjects: 0.281465 ms  DeleteObjects: 0.047884 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.460447 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 217.
+Total: 0.209931 ms (FindLiveObjects: 0.011095 ms CreateObjectMapping: 0.014014 ms MarkObjects: 0.173434 ms  DeleteObjects: 0.010803 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.459863 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 382.
+Total: 0.351831 ms (FindLiveObjects: 0.021898 ms CreateObjectMapping: 0.018978 ms MarkObjects: 0.301027 ms  DeleteObjects: 0.009343 ms)
+

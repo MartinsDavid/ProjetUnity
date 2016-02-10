@@ -48,7 +48,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Menu\Editor\AlphaNumericSort.cs" />
      <Compile Include="Assets\Scripts\Menu\Editor\GUIHierarchy.cs" />
+     <None Include="Assets\Resources\lang.fr.txt" />
      <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
+     <None Include="Assets\Resources\lang.en.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
