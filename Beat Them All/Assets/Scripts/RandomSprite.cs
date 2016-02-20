@@ -20,9 +20,4 @@ public class RandomSprite : MonoBehaviour {
 			GetComponent<SpriteRenderer>().sprite = sprites[currentSprite];
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

@@ -1,67 +1,65 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-public class HealthBarScript : MonoBehaviour {
-
-	public float curHP = 100.0f;
-	public float maxHP = 100.0f;
-
-	public Texture2D HPBarTexture;
-	public float HPBarLenght;
-	public float PercentOfHP;
-
-	public string scene;
-	private Animator animator;
-
-	private bool playedIsDead = false;
+using UnityEngine.SceneManagement;
 
 
-	void Start()
-	{
-		animator = GetComponent<Animator>();
-	}
+public class HealthBarScript : MonoBehaviour
+{
 
+    public float currentHP;
+    public float maxHP;
 
+    public Texture2D HPBarTexture;
+    public float HPBarLenght;
+    public float PercentOfHP;
 
-	void OnGUI () {
+    public string scene;
+    //private Animator animator;
 
-		if (curHP > 0)
-		{
-			GUI.DrawTexture(new Rect(30,30, HPBarLenght, 20), HPBarTexture);
+    //private bool playerIsDead = false;
 
-		}
+    private NewPlayerController playerController;
+    
+    void Awake()
+    {
+        playerController = GetComponent<NewPlayerController>();
+    }
 
-	}
+   /* void Start()
+    {
+        animator = GetComponent<Animator>();
+    }*/
+    
+    void OnGUI()
+    {
 
+        if (currentHP > 0)
+        {
+            GUI.DrawTexture(new Rect(30, 30, HPBarLenght, 20), HPBarTexture);
+        }
+    }
+    
+    void Update()
+    {
+        PercentOfHP = currentHP / maxHP;
+        HPBarLenght = PercentOfHP * 400;
 
-	void Update () {
+        if (currentHP <= 0 && !playerController.isDead)
+        {
+            PlayerDies();
+        }
+    }
 
-		PercentOfHP = curHP / maxHP;
-		HPBarLenght = PercentOfHP * 400;
+    void PlayerDies()
+    {
+        playerController.isDead = true;
+        playerController.myAnimator.SetTrigger("death");
 
-		// A ENLEVER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		if (Input.GetKeyDown ("h"))
-		{
-			curHP -= 10;
-		}
+        GameObject go = new GameObject("ClickToContinue");
+        ClickToContinue script = go.AddComponent<ClickToContinue>();
+        script.scene = SceneManager.GetActiveScene().name;
+        go.AddComponent<DisplayRestartText>();
 
-		if (curHP <= 0 && !playedIsDead)
-		{
-			PlayerDies();
-		}
-	
-	}
+    }
 
-	void PlayerDies()
-	{
-		playedIsDead = true;
-		animator.SetInteger("AnimState", 4);
-
-		GameObject go = new GameObject ("ClickToContinue");
-		ClickToContinue script = go.AddComponent<ClickToContinue> ();
-		script.scene = Application.loadedLevelName;
-		go.AddComponent<DisplayRestartText> ();
-
-	}
-	
 }

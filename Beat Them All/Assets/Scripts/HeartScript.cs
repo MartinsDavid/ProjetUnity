@@ -14,21 +14,21 @@ public class HeartScript : MonoBehaviour {
 	void Update () {
 	
 	}
-
-	void OnTriggerEnter2D(Collider2D target)
+    
+    void OnTriggerEnter2D(Collider2D target)
 	{
-		if (target.gameObject.tag == "Player")
+
+        if (target.gameObject.tag == "Player")
 		{
-			if(health.curHP > health.maxHP-10)
+			if(health.currentHP > health.maxHP-10)
 			{
-				health.curHP = health.maxHP;
+				health.currentHP = health.maxHP;
 			}
 			else
 			{
-				health.curHP += 10;
+                health.currentHP += 10;
 			}
 			Destroy(gameObject);
-			
 		}
 	}
 

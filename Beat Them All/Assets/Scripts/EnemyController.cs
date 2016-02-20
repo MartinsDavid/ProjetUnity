@@ -12,115 +12,158 @@ public class EnemyController : MonoBehaviour
     //Movement Controls
     public float moveSpeed;
     private Vector2 moveDirection;
+    public int healthPoint;
+    public bool isDead;
+    public bool inFight;
 
     //Misc Controls
     public Transform enemyBody;
     public Transform enemyFeet;
-    public Transform enemyWeapon;
     public SpriteRenderer enemySprite;
     public Animator enemyAnimator;
-    public Animator anim;
 
-    private WeaponScript weapon;
+    // Weapon 
+    public Transform enemyWeapon;
+    private WeaponScript weaponScript;
 
-
-    public int curHealth = 5;
-    public int maxHealth = 10;
-
+    // Spawner ID
+    int spawnID;
+    public Transform enemySpawner;
 
 
     void Awake()
     {
-        // Retrieve the weapon only once
-        weapon = GetComponentInChildren<WeaponScript>();
-        anim = gameObject.GetComponent<Animator>();
 
+        // Retrieve the weapon only once
+        weaponScript = GetComponentInChildren<WeaponScript>();
     }
 
     void Start()
     {
+
         //Find the player
-        playerBody = GameObject.Find("Player").transform;
+        playerBody = GameObject.Find("PlayerController").transform;
         //Find attackPoints 1 and 2
         attackPoint1 = GameObject.Find("AttackPoint1").transform;
         attackPoint2 = GameObject.Find("AttackPoint2").transform;
+        //Find the Weapon
+        enemyWeapon = GetComponentInChildren<Transform>();
+        //Find the spawner
+        enemySpawner = GameObject.FindWithTag("Spawner").transform;
 
-        curHealth = maxHealth;
     }
 
     void Update()
     {
+
         //Set the enemy sprite order equal to our enemy's feet Y position
         enemySprite.sortingOrder = -(int)enemyFeet.position.y;
 
         if (transform.position.x < playerBody.position.x)
         {
-            enemyBody.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
         }
         else if (transform.position.x > playerBody.position.x)
         {
-            enemyBody.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
 
-        // Auto-fire
-        enemyWeapon = GetComponentInChildren<Transform>();
-
-        if (enemyWeapon.position.y < playerBody.position.y + 0.5f && enemyWeapon.position.y > playerBody.position.y - 0.5f)
+        if (!inFight)
         {
-            if (weapon != null && weapon.CanAttack)
+            inFight = true;
+            // Auto-fire
+            enemyWeapon = GetComponentInChildren<Transform>();
+
+            if (enemyWeapon.position.y < playerBody.position.y + 1f && enemyWeapon.position.y > playerBody.position.y - 1f)
             {
-                weapon.Attack(true);
+                if (weaponScript != null && weaponScript.CanAttack)
+                {
+                    enemyAnimator.SetTrigger("attack");
+                    weaponScript.Attack(true);
+                }
             }
-        }
 
-        if (curHealth <= 0)
-        {
-            Destroy(gameObject);
+            inFight = false;
         }
-
     }
 
     void FixedUpdate()
     {
-        //Get the distances between our enemy and the attack points
-        float attackDistance1 = Vector2.Distance(transform.position, attackPoint1.position);
-        float attackDistance2 = Vector2.Distance(transform.position, attackPoint2.position);
-
-        //Find the closest attack point, then move towards it
-        if (attackDistance1 < attackDistance2)
+        if (!isDead && !inFight)
         {
-            if (attackDistance1 > 0.3f)
+            //Get the distances between our enemy and the attack points
+            float attackDistance1 = Vector2.Distance(transform.position, attackPoint1.position);
+            float attackDistance2 = Vector2.Distance(transform.position, attackPoint2.position);
+
+            //Find the closest attack point, then move towards it
+            if (attackDistance1 < attackDistance2)
             {
-                MoveInDirection(attackPoint1);
+                if (attackDistance1 > 0.1f)
+                {
+                    MoveInDirection(attackPoint1);
+                }
+                else
+                {
+                    enemyAnimator.SetInteger("animState", 0);
+                }
             }
             else
             {
-                enemyAnimator.SetInteger("AnimState", 0);
+                if (attackDistance2 > 0.1f)
+                {
+                    MoveInDirection(attackPoint2);
+                }
+                else
+                {
+                    enemyAnimator.SetInteger("animState", 0);
+                }
             }
-        }
-        else if (attackDistance2 > 0.3f)
-        {
-            MoveInDirection(attackPoint2);
-        }
-
-        else
-        {
-            enemyAnimator.SetInteger("AnimState", 0);
         }
     }
 
     //Move towards the given attack point
-    private void MoveInDirection(Transform tempTrans)
+    void MoveInDirection(Transform tempTrans)
     {
-        enemyBody.position += (tempTrans.position - enemyBody.position).normalized * moveSpeed * Time.deltaTime;
 
-        enemyAnimator.SetInteger("AnimState", 1);
+        transform.position += (tempTrans.position - transform.position).normalized * moveSpeed * Time.deltaTime;
+
+        enemyAnimator.SetInteger("animState", 1);
     }
 
-    public void Damage(int damage)
+    //When our player hit the enemy
+    public void HitEnemy()
     {
-        curHealth -= damage;
-        gameObject.GetComponent<Animation>().Play("Enemy_hit");
+        healthPoint -= 1;
+        
+        if (healthPoint <= 0)
+        {
+            isDead = true;
+            enemyAnimator.SetTrigger("death");
+            enemySpawner.SendMessage("killEnemy", spawnID);
+        }
+        else
+        {
+            inFight = true;
+            enemyAnimator.SetTrigger("gotHit");
+        }
     }
+
+    public void StopFight()
+    {
+        inFight = false;
+    }
+
+    //When our player kill the enemy
+    public void DestroyEnemy()
+    {
+        Destroy(gameObject);
+    }
+
+    // Applies the spawner's ID to the enemy.    It's cal from the script SpawnerEnemy.cs
+    public void setName(int sID)
+    {
+        spawnID = sID;
+    }
+
 
 }

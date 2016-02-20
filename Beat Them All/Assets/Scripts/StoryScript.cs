@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class StoryScript : MonoBehaviour {
 
@@ -8,18 +9,13 @@ public class StoryScript : MonoBehaviour {
     public int speed = 1;
     public string level;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
     {
 
         if (Input.GetKey("escape"))
-            Application.LoadLevel(level);
+            SceneManager.LoadScene(level);
 
         title.transform.Translate(Vector3.forward * Time.deltaTime * speed);
         text.transform.Translate(Vector3.up * Time.deltaTime * speed / 4);
@@ -30,7 +26,7 @@ public class StoryScript : MonoBehaviour {
     IEnumerator LoadLevel()
     {
         yield return new WaitForSeconds(7);
-        Application.LoadLevel(level);
+        SceneManager.LoadScene(level);
     }
 
 }
