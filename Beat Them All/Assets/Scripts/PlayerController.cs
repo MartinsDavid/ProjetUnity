@@ -12,11 +12,27 @@ public class PlayerController : MonoBehaviour
     public Transform playerBody;
     private Animator animator;
     public float gJump = -2.5f;
-    
+
     static float deplacementHorizontal = 0;
     static float deplacementVertical = 0;
     delegate void DeplacementDelegate(Vector2 moving, bool keyWasHandled, Transform playerBody, Animator animator);
     DeplacementDelegate handler = null;
+
+
+
+    private bool attacking = false;
+    private float attackTimer = 0;
+    private float attackCd = 0.8f;
+    public Collider2D attackTrigger;
+    private Animator anim;
+
+
+    void Awake()
+    {
+        anim = gameObject.GetComponent<Animator>();
+        attackTrigger.enabled = false;
+    }
+
 
     // Use this for initialization
     void Start()
@@ -98,6 +114,31 @@ public class PlayerController : MonoBehaviour
             animator.SetInteger("AnimState", 0);
             keyWasHandled = false;
         }
+
+        //Attaque du joueur
+        if (Input.GetKeyDown("f") && !attacking)
+        {
+            attacking = true;
+            attackTimer = attackCd;
+
+            attackTrigger.enabled = true;
+        }
+
+        if (attacking)
+        {
+            if (attackTimer > 0)
+            {
+                attackTimer -= Time.deltaTime;
+            }
+            else
+            {
+                attacking = false;
+                attackTrigger.enabled = false;
+            }
+            anim.SetBool("Attacking", attacking);
+        }
+
+
         return handler;
     }
 
@@ -422,7 +463,7 @@ public class PlayerController : MonoBehaviour
             handler = deplacementsDelegateClavier(moving, keyWasHandled, playerBody, animator);
         }
     }
-    
+
 
 
     //XBOX CONTROLLER

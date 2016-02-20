@@ -19,12 +19,6 @@ public class MenuScript : MonoBehaviour {
 	public AudioClip quitSound;
 	
 	public string scene;
-
-
-
-
-
-
 	
 	public Animator initiallyOpen;
 	
@@ -43,11 +37,7 @@ public class MenuScript : MonoBehaviour {
 		startText = startText.GetComponent<Button> ();
 		exitText = exitText.GetComponent<Button> ();
 		quitMenu.enabled = false;
-
 		optionsMenu = optionsMenu.GetComponent<Canvas> ();
-		//test = test.GetComponent<Button>();
-
-
 	}
 	
 	// Update is called once per frame
@@ -90,16 +80,7 @@ public class MenuScript : MonoBehaviour {
 		quitMenu.enabled = false;
 		startText.enabled = false;
 		exitText.enabled = false;
-		//optionsMenu.enabled = true;
 	}
-
-
-
-
-
-
-
-
 
 
 	

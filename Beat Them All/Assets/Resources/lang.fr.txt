@@ -4,6 +4,11 @@
 	["game.settings", "options"],
 	["game.credits", "credits"],
 	["game.quit", "quitter"]
-	["game.language", "langage"]
-	["game.back", "retour"]
+
+	["game.textCredits", "Credits-fr"]
+
+	["game.introduction", "Il y a bien longtemps, dans une galaxie lointaine, très lointaine..."]
+
+	["game.story", "Story-fr"]
+
 ]

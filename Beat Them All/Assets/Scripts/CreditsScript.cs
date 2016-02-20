@@ -3,14 +3,16 @@ using System.Collections;
 
 public class CreditsScript : MonoBehaviour {
 	
-	public GameObject texte;
+	public GameObject credits;
 	public int speed = 1;
 	public string level;
+
+	private Sprite spriteCredits;
 	
 	// Use this for initialization
 	void Start () {
-		
-		
+		spriteCredits = Resources.Load<Sprite> (Lang.Get("game.textCredits"));
+		credits.GetComponent<SpriteRenderer> ().sprite = spriteCredits;
 	}
 	
 	// Update is called once per frame
@@ -19,7 +21,7 @@ public class CreditsScript : MonoBehaviour {
 		if (Input.GetKey ("escape"))
 			Application.LoadLevel (level);
 
-		texte.transform.Translate (Vector3.up * Time.deltaTime * speed);
+		credits.transform.Translate (Vector3.up * Time.deltaTime * speed);
 	}
 	
 	IEnumerator waitFor()

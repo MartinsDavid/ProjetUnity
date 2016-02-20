@@ -1,11 +1,14 @@
 [
-	["game.menu", "menu"
+	["game.menu", "menu"]
 	["game.playGame", "play game"],
 	["game.settings", "settings"],
 	["game.credits", "credits"],
 	["game.quit", "quit"]
+
+	["game.textCredits", "Credits-en"]
 	
-	["game.language", "language"]
-	["game.back", "back"]
+	["game.introduction", "A long time ago, in a galaxy far, far away..."]
+
+	["game.story", "Story-en"]
 	
 ]

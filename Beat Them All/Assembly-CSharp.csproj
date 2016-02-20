@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\DPLoadScreen.cs" />
      <Compile Include="Assets\Scripts\DisplayRestartText.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
+     <Compile Include="Assets\Scripts\EnemyControllerV1.cs" />
      <Compile Include="Assets\Scripts\HealthBarScript.cs" />
      <Compile Include="Assets\Scripts\HeartScript.cs" />
      <Compile Include="Assets\Scripts\IntroductionScript.cs" />
@@ -70,6 +71,7 @@
      <Compile Include="Assets\Scripts\Menu\TiltWindow.cs" />
      <Compile Include="Assets\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Scripts\MoveShotScript.cs" />
+     <Compile Include="Assets\Scripts\NewPlayerController.cs" />
      <Compile Include="Assets\Scripts\PauseScript.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
@@ -80,11 +82,13 @@
      <Compile Include="Assets\Scripts\RandomSprite.cs" />
      <Compile Include="Assets\Scripts\ScoreScript.cs" />
      <Compile Include="Assets\Scripts\ShotScript.cs" />
+     <Compile Include="Assets\Scripts\SpawnerEnemy.cs" />
      <Compile Include="Assets\Scripts\StoryScript.cs" />
      <Compile Include="Assets\Scripts\Utils\SimpleJSON.cs" />
      <Compile Include="Assets\Scripts\Utils\Singleton.cs" />
      <Compile Include="Assets\Scripts\WeaponScript.cs" />
-     <Compile Include="Assets\Scripts\test.cs" />
+     <Compile Include="Assets\Scripts\attackTrigger.cs" />
+     <Compile Include="Assets\Scripts\playerAttack.cs" />
      <Compile Include="Assets\demo.cs" />
      <None Include="Assets\Resources\lang.fr.txt" />
      <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />

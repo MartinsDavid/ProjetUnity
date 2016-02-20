@@ -8,20 +8,12 @@ public class WeaponScript : MonoBehaviour
     // 1 - Designer variables
     //--------------------------------
 
-    /// <summary>
-    /// Projectile prefab for shooting
-    /// </summary>
-    public Transform shotPrefab;
-
-    /// <summary>
-    /// Cooldown in seconds between two shots
-    /// </summary>
-    public float shootingRate = 1.5f;
+    public Transform shotPrefab; // Projectile prefab for shooting
+    public float shootingRate; // Cooldown in seconds between two shots
 
     //--------------------------------
     // 2 - Cooldown
     //--------------------------------
-
     private float shootCooldown;
 
     void Start()
@@ -67,7 +59,7 @@ public class WeaponScript : MonoBehaviour
             MoveShotScript move = shotTransform.gameObject.GetComponent<MoveShotScript>();
             if (move != null)
             {
-                move.direction = this.transform.right; // towards in 2D space is the right of the sprite
+                move.direction = transform.right; // towards in 2D space is the right of the sprite
             }
         }
     }
