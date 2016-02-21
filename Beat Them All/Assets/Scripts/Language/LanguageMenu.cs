@@ -10,8 +10,7 @@ public class LanguageMenu : MonoBehaviour {
 	private GameObject textCredits;
 	private GameObject textQuit;
 
-	private GameObject textLanguage;
-	private GameObject textBack;
+
 
 
 	// Use this for initialization
@@ -31,13 +30,18 @@ public class LanguageMenu : MonoBehaviour {
 
 		textQuit = GameObject.Find ("TextQuit");
 		textQuit.GetComponent<Text> ().text = Lang.Get("game.quit");
+
 		/*
 		textLanguage = GameObject.Find ("TextLanguage");
 		textLanguage.GetComponent<Text> ().text = Lang.Get("game.language");
 
+
 		textBack = GameObject.Find ("TextBack");
 		textBack.GetComponent<Text> ().text = Lang.Get("game.back");
-		*/
+*/
+
+
+	
 
 
 	}

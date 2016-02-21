@@ -23,27 +23,17 @@ public class HealthBarScript : MonoBehaviour {
 	
 	
 	
-	void OnGUI () {
-		
+	void OnGUI () {	
 		if (curHP > 0)
 		{
-			GUI.DrawTexture(new Rect(30,30, HPBarLenght, 20), HPBarTexture);
-			
-		}
-		
+			GUI.DrawTexture(new Rect(30,30, HPBarLenght, 20), HPBarTexture);		
+		}	
 	}
-	
-	
+
 	void Update () {
 		
 		PercentOfHP = curHP / maxHP;
 		HPBarLenght = PercentOfHP * 400;
-		
-		// A ENLEVER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		if (Input.GetKeyDown ("h"))
-		{
-			curHP -= 10;
-		}
 		
 		if (curHP <= 0 && !playedIsDead)
 		{

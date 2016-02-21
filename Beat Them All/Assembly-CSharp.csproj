@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AudioScript.cs" />
      <Compile Include="Assets\Scripts\ClickToContinue.cs" />
      <Compile Include="Assets\Scripts\Collectable.cs" />
      <Compile Include="Assets\Scripts\CreditsScript.cs" />
@@ -57,7 +58,11 @@
      <Compile Include="Assets\Scripts\HeartScript.cs" />
      <Compile Include="Assets\Scripts\IntroductionScript.cs" />
      <Compile Include="Assets\Scripts\Lang.cs" />
-     <Compile Include="Assets\Scripts\LanguageMenu.cs" />
+     <Compile Include="Assets\Scripts\Language\LanguageAudio.cs" />
+     <Compile Include="Assets\Scripts\Language\LanguageLanguage.cs" />
+     <Compile Include="Assets\Scripts\Language\LanguageMenu.cs" />
+     <Compile Include="Assets\Scripts\Language\LanguageSettings.cs" />
+     <Compile Include="Assets\Scripts\Language\LanguageVideo.cs" />
      <Compile Include="Assets\Scripts\Menu\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\Menu\ApplicationManager.cs" />
      <Compile Include="Assets\Scripts\Menu\ChangeColor.cs" />
@@ -86,10 +91,10 @@
      <Compile Include="Assets\Scripts\StoryScript.cs" />
      <Compile Include="Assets\Scripts\Utils\SimpleJSON.cs" />
      <Compile Include="Assets\Scripts\Utils\Singleton.cs" />
+     <Compile Include="Assets\Scripts\VideoScript.cs" />
      <Compile Include="Assets\Scripts\WeaponScript.cs" />
      <Compile Include="Assets\Scripts\attackTrigger.cs" />
      <Compile Include="Assets\Scripts\playerAttack.cs" />
-     <Compile Include="Assets\demo.cs" />
      <None Include="Assets\Resources\lang.fr.txt" />
      <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
      <None Include="Assets\Resources\lang.en.txt" />

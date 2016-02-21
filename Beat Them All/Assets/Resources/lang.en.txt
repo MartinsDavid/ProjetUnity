@@ -4,6 +4,16 @@
 	["game.settings", "settings"],
 	["game.credits", "credits"],
 	["game.quit", "quit"]
+	
+	["game.language", "language"]	
+	["game.video", "video"]
+	["game.audio", "audio"]
+	["game.back", "back"]
+	
+	["game.fullScreen", "full screen"]
+	["game.qualityGraphics", "graphics"]
+	
+	["game.volume", "volume"]
 
 	["game.textCredits", "Credits-en"]
 	
