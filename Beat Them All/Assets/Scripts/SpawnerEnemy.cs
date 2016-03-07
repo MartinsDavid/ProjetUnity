@@ -19,9 +19,6 @@ public class SpawnerEnemy : MonoBehaviour
     public enum EnemyLevels
     {
         Distance,
-        Easy,
-        Medium,
-        Hard,
         Boss
     }
     //---------------------------------
@@ -30,15 +27,12 @@ public class SpawnerEnemy : MonoBehaviour
 
 
     // Enemy level to be spawnedEnemy
-    public EnemyLevels enemyLevel = EnemyLevels.Easy;
+    public EnemyLevels enemyLevel;
 
 
     //----------------------------------
     // Enemy Prefabs
     //----------------------------------
-    public GameObject EasyEnemy;
-    public GameObject MediumEnemy;
-    public GameObject HardEnemy;
     public GameObject BossEnemy;
     public GameObject DistanceEnemy;
     //----------------------------------
@@ -49,8 +43,8 @@ public class SpawnerEnemy : MonoBehaviour
     //----------------------------------
     // Enemies and how many have been created and how many are to be created
     //----------------------------------
-    public int totalEnemy = 1;
-    public int numEnemy = 0; //=======================================================OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO+++++++++++++++++++++++++++++++++++++++++++++++++++++
+    public int totalEnemy;
+    public int numEnemy = 0;
     public int spawnedEnemy = 0;
     //----------------------------------
     // End of Enemy Settings
@@ -67,10 +61,10 @@ public class SpawnerEnemy : MonoBehaviour
     public bool Spawn = true;
     public SpawnTypes spawnType = SpawnTypes.Normal;
     // Timed wave controls
-    public float waveTimer = 30.0f;
+    public float waveTimer;
     private float timeTillWave = 0.0f;
     // Wave controls
-    public int totalWaves = 5;
+    public int totalWaves;
     private int numWaves = 0;
     //----------------------------------
     // End of Different Spawn states and ways of doing them
@@ -191,55 +185,7 @@ public class SpawnerEnemy : MonoBehaviour
     private void spawnEnemy()
     {
         // To check which enemy prefab to instantiate
-        if (enemyLevel == EnemyLevels.Easy)
-        {
-            // Checks to see if there is a gameobject in the easy enemy var
-            if (EasyEnemy != null)
-            {
-                // Spawns the enemy
-                GameObject Enemy = (GameObject)Instantiate(EasyEnemy, gameObject.transform.position, Quaternion.identity);
-                // Calls a function on the enemy that applies the spawner's ID to the enemy
-                Enemy.SendMessage("setName", SpawnID);
-            }
-            else
-            {
-                //Shows a debug message if there is no prefab
-                Debug.Log("ERROR: No easy enemy Prefab loaded");
-            }
-        }
-        else if (enemyLevel == EnemyLevels.Medium)
-        {
-            // Checks to see if there is a gameobject in the medium enemy var
-            if (MediumEnemy != null)
-            {
-                // Spawns the enemy
-                GameObject Enemy = (GameObject)Instantiate(MediumEnemy, gameObject.transform.position, Quaternion.identity);
-                // Calls a function on the enemy that applies the spawner's ID to the enemy
-                Enemy.SendMessage("setName", SpawnID);
-            }
-            else
-            {
-                //Shows a debug message if there is no prefab
-                Debug.Log("ERROR: No medium enemy Prefab loaded");
-            }
-        }
-        else if (enemyLevel == EnemyLevels.Hard)
-        {
-            // Checks to see if there is a gameobject in the hard enemy var
-            if (HardEnemy != null)
-            {
-                // Spawns the enemy
-                GameObject Enemy = (GameObject)Instantiate(HardEnemy, gameObject.transform.position, Quaternion.identity);
-                // Calls a function on the enemy that applies the spawner's ID to the enemy
-                Enemy.SendMessage("setName", SpawnID);
-            }
-            else
-            {
-                //Shows a debug message if there is no prefab
-                Debug.Log("ERROR: No hard enemy Prefab loaded");
-            }
-        }
-        else if (enemyLevel == EnemyLevels.Boss)
+        if (enemyLevel == EnemyLevels.Boss)
         {
             // Checks to see if there is a gameobject in the boss enemy var
             if (BossEnemy != null)

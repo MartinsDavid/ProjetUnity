@@ -141,7 +141,6 @@ public class NewPlayerController : MonoBehaviour {
                 //Call the enemy script, and tell it that we hit them !
                 hit.collider.GetComponent<EnemyController>().HitEnemy();
             }
-
         }
     }
 }
