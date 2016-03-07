@@ -1,6 +1,12 @@
 Base path: C:/Program Files/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-2-7112
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-2-1472
 Cmd: getPlatforms
+Cmd: compileSnippet
+  api=8 type=0 insize=9591 outsize=17063 kw= ok=1
+Cmd: compileSnippet
+  api=8 type=1 insize=9591 outsize=3973 kw= ok=1
+Cmd: compileSnippet
+  api=8 type=1 insize=9591 outsize=4249 kw=UNITY_COLORSPACE_GAMMA ok=1
 Unhandled exception: Readfile from pipe failed. GLE=Le canal de communication a été fermé.
 
 

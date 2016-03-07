@@ -6,6 +6,10 @@ public class ShotScript : MonoBehaviour
 
 	private HealthBarScript healthBar;
 
+	public AudioClip playerTouchedSound1;
+	public AudioClip playerTouchedSound2;
+	public AudioClip playerTouchedSound3;
+
 
     // 1 - Designer variables
 
@@ -28,6 +32,20 @@ public class ShotScript : MonoBehaviour
 		if (target.gameObject.tag == "Player")
 		{
 			healthBar.curHP -= damage;
+		
+			switch (Random.Range(0,3) % 3) {
+			case 0:
+				AudioSource.PlayClipAtPoint (playerTouchedSound1, transform.position);
+				break;
+			case 1 :
+				AudioSource.PlayClipAtPoint (playerTouchedSound2, transform.position);
+				break;
+			case 2 :
+				AudioSource.PlayClipAtPoint (playerTouchedSound3, transform.position);
+				break;
+			}
+
+
 			Destroy(gameObject);
 		}
 	}

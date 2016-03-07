@@ -1,201 +1,69 @@
 Initialize engine version: 5.1.1f1 (2046fc06d4d8)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 11.0 [level 10.1]
-    Renderer: NVIDIA GeForce 210  (ID=0xa65)
-    Vendor:   NVIDIA
-    VRAM:     466 MB
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon HD 6310 Graphics                                                         (ID=0x9802)
+    Vendor:   ATI
+    VRAM:     248 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.074 seconds
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+Platform assembly: C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.413 seconds
+desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetBeatThemAll\ProjetUnity\Beat Them All\Jeu_Data\Managed\System.dll (this message is harmless)
-Qualité : 0
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+Platform assembly: C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\System.dll (this message is harmless)
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 22.904390 ms
 
-Qualité : 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 213.
+Total: 1.069560 ms (FindLiveObjects: 0.084459 ms CreateObjectMapping: 0.043413 ms MarkObjects: 0.600690 ms  DeleteObjects: 0.338628 ms)
 
-Qualité : 2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.384903 ms
 
-Qualité : 3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 209.
+Total: 0.772767 ms (FindLiveObjects: 0.083670 ms CreateObjectMapping: 0.063936 ms MarkObjects: 0.531228 ms  DeleteObjects: 0.090774 ms)
 
-Qualité : 4
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.971682 ms
 
-Qualité : 3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 233.
+Total: 0.834336 ms (FindLiveObjects: 0.075777 ms CreateObjectMapping: 0.048149 ms MarkObjects: 0.663048 ms  DeleteObjects: 0.045781 ms)
 
-Qualité : 2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.787271 ms
 
-Qualité : 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 233.
+Total: 0.713566 ms (FindLiveObjects: 0.082881 ms CreateObjectMapping: 0.060779 ms MarkObjects: 0.552540 ms  DeleteObjects: 0.014208 ms)
 
-Qualité : 0
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.116230 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: e70 -> priority: 1 
 
-Qualité : 2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 390.
+Total: 1.188751 ms (FindLiveObjects: 0.093142 ms CreateObjectMapping: 0.066304 ms MarkObjects: 0.989047 ms  DeleteObjects: 0.039467 ms)
 
-Qualité : 4
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.270054 ms
 
-Qualité : 5
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 384.
+Total: 1.292945 ms (FindLiveObjects: 0.133399 ms CreateObjectMapping: 0.068672 ms MarkObjects: 1.038776 ms  DeleteObjects: 0.047360 ms)
 
-Qualité : 4
+NullReferenceException: Object reference not set to an instance of an object
+  at NewPlayerController.Attacking () [0x00000] in <filename unknown>:0 
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 4
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 5
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 4
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 0
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 0
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 4
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 5
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 4
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 0
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 4
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Qualité : 5
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+(Filename:  Line: -1)
 

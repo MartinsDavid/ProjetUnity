@@ -7,6 +7,7 @@ public class LanguageVideo : MonoBehaviour {
 	private GameObject titleVideo;
 	private GameObject textFullScreen;
 	private GameObject textQualityGraphics;
+	private GameObject textAntiAliasing;
 	private GameObject textBackVideo;
 
 	// Use this for initialization
@@ -18,17 +19,14 @@ public class LanguageVideo : MonoBehaviour {
 		textQualityGraphics = GameObject.Find ("TextQualityGraphics");
 		textQualityGraphics.GetComponent<Text> ().text = Lang.Get("game.qualityGraphics");
 
+		textAntiAliasing = GameObject.Find ("TextAntiAliasing");
+		textAntiAliasing.GetComponent<Text> ().text = Lang.Get("game.antiAliasing");
+
 		textFullScreen = GameObject.Find ("TextFullScreen");
 		textFullScreen.GetComponent<Text> ().text = Lang.Get("game.fullScreen");
 
 		textBackVideo = GameObject.Find ("TextBackVideo");
 		textBackVideo.GetComponent<Text> ().text = Lang.Get("game.back");
 
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }

@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class HealthBarScript : MonoBehaviour {
-	
+
 	public float curHP = 100.0f;
 	public float maxHP = 100.0f;
 	
@@ -14,6 +14,8 @@ public class HealthBarScript : MonoBehaviour {
 	private Animator animator;
 	
 	private bool playedIsDead = false;
+
+	public AudioClip deathSound;
 	
 	
 	void Start()
@@ -44,6 +46,8 @@ public class HealthBarScript : MonoBehaviour {
 	
 	void PlayerDies()
 	{
+		AudioSource.PlayClipAtPoint (deathSound, transform.position);
+
 		playedIsDead = true;
 		animator.SetInteger("AnimState", 4);
 		

@@ -24,20 +24,23 @@ public class StoryScript : MonoBehaviour {
 	void Update()
 	{
 		
-		if (Input.GetKey("escape"))
-			Application.LoadLevel(level);
+		if (Input.GetKey ("escape"))
+		{
+			Application.LoadLevel (level);
+			DPLoadScreen.Instance.LoadLevel ("NewMainScene", true, level);
+		}
+
 
 		title.transform.Translate(Vector3.forward * Time.deltaTime * speed);
 		story.transform.Translate(Vector3.up * Time.deltaTime * speed /16);
-		story.transform.Translate(Vector3.forward * Time.deltaTime * speed /48);
-		
+		story.transform.Translate(Vector3.forward * Time.deltaTime * speed /48);	
 		
 	}
 	
 	IEnumerator LoadLevel()
 	{
 		yield return new WaitForSeconds(30);
-		DPLoadScreen.Instance.LoadLevel("MainScene", true, level);
+		DPLoadScreen.Instance.LoadLevel("NewMainScene", true, level);
 	}
 	
 }

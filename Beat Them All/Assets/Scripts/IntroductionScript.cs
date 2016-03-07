@@ -14,9 +14,18 @@ public class IntroductionScript : MonoBehaviour {
 		textIntroduction = GameObject.Find ("TextIntroduction");
 		textIntroduction.GetComponent<Text> ().text = Lang.Get("game.introduction");
 
-
         StartCoroutine(LoadLevel());
     }
+
+	
+	// Update is called once per frame
+	void Update()
+	{	
+		if (Input.GetKey ("escape"))
+		{
+			Application.LoadLevel (level);
+		}	
+	}
 
     IEnumerator LoadLevel()
     {

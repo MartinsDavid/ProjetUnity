@@ -21,7 +21,7 @@ public class ScoreScript : MonoBehaviour {
 	void OnGUI()
 	{
 		GUI.skin = LabelSkin;
-		GUI.Label (new Rect (40, 60, 300, 50), "Score : " + points);
+		GUI.Label (new Rect (40, 60, 300, 50), Lang.Get("game.score") + " : " + points);
 	}
 
 

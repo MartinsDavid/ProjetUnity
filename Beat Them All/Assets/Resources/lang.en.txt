@@ -12,6 +12,7 @@
 	
 	["game.fullScreen", "full screen"]
 	["game.qualityGraphics", "graphics"]
+	["game.antiAliasing", "anti-aliasing"]
 	
 	["game.volume", "volume"]
 
@@ -20,5 +21,8 @@
 	["game.introduction", "A long time ago, in a galaxy far, far away..."]
 
 	["game.story", "Story-en"]
+	
+	["game.restart", "restartText-en"]
+	["game.score", "score"]
 	
 ]

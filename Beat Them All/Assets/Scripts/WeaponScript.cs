@@ -11,6 +11,8 @@ public class WeaponScript : MonoBehaviour
     public Transform shotPrefab; // Projectile prefab for shooting
     public float shootingRate; // Cooldown in seconds between two shots
 
+	public AudioClip projectileSound;
+
     //--------------------------------
     // 2 - Cooldown
     //--------------------------------
@@ -40,6 +42,7 @@ public class WeaponScript : MonoBehaviour
     {
         if (CanAttack)
         {
+			AudioSource.PlayClipAtPoint (projectileSound, transform.position);
             shootCooldown = shootingRate;
 
             // Create a new shot

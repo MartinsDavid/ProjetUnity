@@ -7,7 +7,7 @@ public class DisplayRestartText : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		t2D = Resources.Load<Texture2D>("restartText");
+		t2D = Resources.Load<Texture2D>(Lang.Get("game.restart"));
 	}
 	
 	// Update is called once per frame

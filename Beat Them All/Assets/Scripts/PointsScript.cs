@@ -6,6 +6,8 @@ public class PointsScript : MonoBehaviour {
 
 	private ScoreScript score;
 
+	public AudioClip pointsSound;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -22,6 +24,7 @@ public class PointsScript : MonoBehaviour {
 		if (target.gameObject.tag == "Player")
 		{
 			score.points += 1;
+			AudioSource.PlayClipAtPoint (pointsSound, transform.position);
 			Destroy(gameObject);
 
 		}

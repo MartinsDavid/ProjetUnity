@@ -4,6 +4,8 @@ using System.Collections;
 public class HeartScript : MonoBehaviour {
 	
 	private HealthBarScript health;
+
+	public AudioClip lifeSound;
 	
 	// Use this for initialization
 	void Start () {
@@ -27,6 +29,9 @@ public class HeartScript : MonoBehaviour {
 			{
 				health.curHP += 10;
 			}
+
+			AudioSource.PlayClipAtPoint (lifeSound, transform.position);
+
 			Destroy(gameObject);
 			
 		}

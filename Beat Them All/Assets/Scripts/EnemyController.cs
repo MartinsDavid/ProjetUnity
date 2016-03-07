@@ -30,6 +30,8 @@ public class EnemyController : MonoBehaviour
     int spawnID;
     public Transform enemySpawner;
 
+	public AudioClip destructedDroidSound;
+
 
     void Awake()
     {
@@ -137,6 +139,7 @@ public class EnemyController : MonoBehaviour
         
         if (healthPoint <= 0)
         {
+			AudioSource.PlayClipAtPoint (destructedDroidSound, transform.position);
             isDead = true;
             enemyAnimator.SetTrigger("death");
             enemySpawner.SendMessage("killEnemy", spawnID);

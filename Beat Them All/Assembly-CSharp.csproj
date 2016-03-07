@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\AudioScript.cs" />
      <Compile Include="Assets\Scripts\ClickToContinue.cs" />
      <Compile Include="Assets\Scripts\Collectable.cs" />
+     <Compile Include="Assets\Scripts\ControlsScript.cs" />
      <Compile Include="Assets\Scripts\CreditsScript.cs" />
      <Compile Include="Assets\Scripts\DPLoadScreen.cs" />
      <Compile Include="Assets\Scripts\DisplayRestartText.cs" />

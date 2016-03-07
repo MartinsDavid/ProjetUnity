@@ -3,6 +3,12 @@ using System.Collections;
 
 public class NewPlayerController : MonoBehaviour {
 
+
+	public AudioClip punchSound1;
+	public AudioClip punchSound2;
+	public AudioClip punchSound3;
+	public AudioClip jumpSound;
+
     //Player Controls
     public Transform playerBody;
     public Transform playerFeet;
@@ -18,6 +24,10 @@ public class NewPlayerController : MonoBehaviour {
     public bool isJumping;
     public bool isAttacking;
     public bool isDead;
+
+
+	
+
 
     // Update is called once per frame
     void Update()
@@ -73,6 +83,7 @@ public class NewPlayerController : MonoBehaviour {
         {
             isJumping = true;
             myAnimator.SetTrigger("jumped");
+			AudioSource.PlayClipAtPoint (jumpSound, transform.position);
         }
 
         //Did we attack?
@@ -99,6 +110,19 @@ public class NewPlayerController : MonoBehaviour {
     //This is activatd via an event in the Player_Attack animation
     void Attacking()
     {
+		switch (Random.Range(0,3) % 3) {
+		case 0:
+			AudioSource.PlayClipAtPoint (punchSound1, transform.position);
+			break;
+		case 1 :
+			AudioSource.PlayClipAtPoint (punchSound2, transform.position);
+			break;
+		case 2 :
+			AudioSource.PlayClipAtPoint (punchSound3, transform.position);
+			break;
+		}
+	
+
         //Shot a ray out in the "right" direction.
         //As we are rotating our player-body, we multiply Vector2.right by the rotation in order to get the correct "right" direction
         RaycastHit2D hit = Physics2D.Raycast(attackRayStart.position, playerBody.rotation * Vector2.right, 2);
