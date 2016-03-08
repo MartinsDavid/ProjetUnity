@@ -44,7 +44,7 @@ public class NewPlayerController : MonoBehaviour {
         {
 
             //This will clamp how far up/down/left/right we can go in LOCAL space
-            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -25, 25), Mathf.Clamp(transform.position.y, -10, -3));
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 300), Mathf.Clamp(transform.position.y, -11, -5));
 
             //Grab our movement axis
             playerAxisMove = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
