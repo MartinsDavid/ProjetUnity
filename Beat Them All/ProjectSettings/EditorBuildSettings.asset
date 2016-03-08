@@ -19,3 +19,5 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadScreen.unity
   - enabled: 1
     path: Assets/Scenes/NewMainScene.unity
+  - enabled: 1
+    path: Assets/Scenes/Introduction.unity

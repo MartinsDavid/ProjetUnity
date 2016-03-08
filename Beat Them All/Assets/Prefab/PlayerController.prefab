@@ -153,7 +153,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .109999999, y: -5.21000004, z: 0}
+  m_LocalPosition: {x: 5.03000021, y: -4.5999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 440328}
@@ -215,6 +215,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9095d307135dc24ba488c3b6a7fcb41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  punchSound1: {fileID: 8300000, guid: 9e311724a39febe4bafc6135bd7ac4b5, type: 3}
+  punchSound2: {fileID: 8300000, guid: 305786f804c06fa458cb7a18aec0c68d, type: 3}
+  punchSound3: {fileID: 8300000, guid: b7caaddf230ec884a9b7fd40f5dc066d, type: 3}
+  jumpSound: {fileID: 8300000, guid: 3884b953be374784180ebba8c455c7c3, type: 3}
   playerBody: {fileID: 440328}
   playerFeet: {fileID: 408942}
   playerSprite: {fileID: 21225730}
@@ -241,6 +245,7 @@ MonoBehaviour:
   HPBarLenght: 0
   PercentOfHP: 0
   scene: 
+  deathSound: {fileID: 0}
 --- !u!114 &11487328
 MonoBehaviour:
   m_ObjectHideFlags: 1

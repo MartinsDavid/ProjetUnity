@@ -1,13 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NewPlayerController.cs">
     <Files>
-      <File FileName="Assets\Scripts\NewPlayerController.cs" Line="86" Column="42" />
-      <File FileName="Assets\Scripts\WeaponScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyController.cs" Line="144" Column="47" />
-      <File FileName="Assets\Scripts\HealthBarScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Projectile.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ShotScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EnemyController.cs" Line="173" Column="1" />
+      <File FileName="Assets\Scripts\RandomSprite.cs" Line="10" Column="32" />
+      <File FileName="Assets\Scripts\NewPlayerController.cs" Line="142" Column="1" />
+      <File FileName="Assets\Scripts\Menu\PanelManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -268,7 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   credits: {fileID: 1516039909}
   speed: 5
-  level: 4d61696e4d656e75
+  level: MainMenu
 --- !u!82 &1229971733
 AudioSource:
   m_ObjectHideFlags: 0
