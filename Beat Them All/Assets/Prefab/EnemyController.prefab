@@ -13,7 +13,7 @@ GameObject:
   - 58: {fileID: 5826676}
   m_Layer: 0
   m_Name: EnemyController
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,6 +251,10 @@ Prefab:
       propertyPath: projectileSound
       value: 
       objectReference: {fileID: 8300000, guid: 85d8ad9c4c0c0d7468be2dd54ab575e4, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 122672}

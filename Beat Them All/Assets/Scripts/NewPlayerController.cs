@@ -25,76 +25,90 @@ public class NewPlayerController : MonoBehaviour {
     public bool isAttacking;
     public bool isDead;
 
-
-	
+    private GameObject[] enemy;
+    private int count = 0;
+    private int salle = 0;
 
 
     // Update is called once per frame
-    void Update()
-    {
+     void Update()
+     {
+    
+         playerSprite.sortingOrder = -(int)playerFeet.position.y;
 
-        playerSprite.sortingOrder = -(int)playerFeet.position.y;
+         //-----------------------
+         //Movement Section
+         //-----------------------
 
-        //-----------------------
-        //Movement Section
-        //-----------------------
+         enemy = GameObject.FindGameObjectsWithTag("Enemy");
 
-        //As long as we are not attacking and we are not dead, we can move.
-        if (!isAttacking && !isDead)
-        {
+         //As long as we are not attacking and we are not dead, we can move.
+         if (!isAttacking && !isDead)
+         {
+            
+             if (salle == 0 && enemy.Length > 0)
+             {
+                 //This will clamp how far up/down/left/right we can go in LOCAL space
+                 transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 51), Mathf.Clamp(transform.position.y, -11, -5));
+                 count = 1;
+             }
 
-            //This will clamp how far up/down/left/right we can go in LOCAL space
-            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 300), Mathf.Clamp(transform.position.y, -11, -5));
+             if (salle == 0 && enemy.Length == 0 && count == 1)
+             {
+                 transform.position = new Vector2(Mathf.Clamp(transform.position.x, -15, 320), Mathf.Clamp(transform.position.y, -11, -5));
+             }
 
-            //Grab our movement axis
-            playerAxisMove = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+             //187 ---- 255 ---- 316    
 
-            //Move our player around
-            transform.Translate(playerAxisMove * moveSpeed * Time.deltaTime);
+             //Grab our movement axis
+             playerAxisMove = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-            //Checks to see which way our player is going and flips their facing direction
-            if (playerAxisMove.x > 0)
-            {
-                playerBody.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-            }
-            else if (playerAxisMove.x < 0)
-            {
-                playerBody.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-            }
+             //Move our player around
+             transform.Translate(playerAxisMove * moveSpeed * Time.deltaTime);
 
-            //Checks to see if our player is moving
-            //If they are, activate the "walking" variable
-            if (Mathf.Abs(playerAxisMove.x) > 0 || Mathf.Abs(playerAxisMove.y) > 0)
-            {
-                myAnimator.SetBool("isWalking", true);
-            }
-            else
-            {
-                myAnimator.SetBool("isWalking", false);
-            }
-        }
+             //Checks to see which way our player is going and flips their facing direction
+             if (playerAxisMove.x > 0)
+             {
+                 playerBody.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+             }
+             else if (playerAxisMove.x < 0)
+             {
+                 playerBody.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+             }
 
-        //-----------------------
-        //Button Detect Section
-        //-----------------------
+             //Checks to see if our player is moving
+             //If they are, activate the "walking" variable
+             if (Mathf.Abs(playerAxisMove.x) > 0 || Mathf.Abs(playerAxisMove.y) > 0)
+             {
+                 myAnimator.SetBool("isWalking", true);
+             }
+             else
+             {
+                 myAnimator.SetBool("isWalking", false);
+             }
+         }
 
-        //Did we jump?
-        if (Input.GetButtonDown("Jump") && !isJumping && !isAttacking)
-        {
-            isJumping = true;
-            myAnimator.SetTrigger("jumped");
-			AudioSource.PlayClipAtPoint (jumpSound, transform.position);
-        }
+         //-----------------------
+         //Button Detect Section
+         //-----------------------
 
-        //Did we attack?
-        if (Input.GetButtonDown("Fire1") && !isJumping && !isAttacking)
-        {
-            isAttacking = true;
-            myAnimator.SetTrigger("attacked");
-        }
+         //Did we jump?
+         if (Input.GetButtonDown("Jump") && !isJumping && !isAttacking)
+         {
+             isJumping = true;
+             myAnimator.SetTrigger("jumped");
+             AudioSource.PlayClipAtPoint (jumpSound, transform.position);
+         }
 
-    }
+         //Did we attack?
+         if (Input.GetButtonDown("Fire1") && !isJumping && !isAttacking)
+         {
+             isAttacking = true;
+             myAnimator.SetTrigger("attacked");
+         }
 
+     }
+     
     //This is activated via an event in the Player_Jump animation
     void JumpCompleted()
     {
