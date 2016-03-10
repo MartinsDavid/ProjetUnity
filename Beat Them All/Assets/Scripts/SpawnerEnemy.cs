@@ -54,6 +54,7 @@ public class SpawnerEnemy : MonoBehaviour
     // The ID of the spawner
     private int SpawnID;
 
+    public int lifeTime;
     //----------------------------------
     // Different Spawn states and ways of doing them
     //----------------------------------
@@ -75,7 +76,6 @@ public class SpawnerEnemy : MonoBehaviour
     {
         // Sets a random number for the id of the spawner
         SpawnID = Random.Range(1, 500);
-        InvokeRepeating("SpawnUpdate", 0.2f, 1f);
     }
 
     // Draws a cube to show where the spawn point is... Useful if you don't have a object that show the spawn point
@@ -86,6 +86,16 @@ public class SpawnerEnemy : MonoBehaviour
         // Draws a small cube at the location of the gam object that the script is attached to
         Gizmos.DrawCube(transform.position, new Vector3(1f, 1f, 1f));
     }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.isTrigger == true && collider.gameObject.tag == "Player")
+        {
+            InvokeRepeating("SpawnUpdate", 0.2f, 1f);
+            //Destroy the spawner after 40 sec
+            Destroy(gameObject, lifeTime);
+        }
+    } 
 
     // This is the update replacement
     private void SpawnUpdate()  
