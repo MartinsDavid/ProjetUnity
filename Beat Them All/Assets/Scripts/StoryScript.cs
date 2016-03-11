@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class StoryScript : MonoBehaviour {
@@ -26,8 +27,8 @@ public class StoryScript : MonoBehaviour {
 		
 		if (Input.GetKey ("escape"))
 		{
-			Application.LoadLevel (level);
-			DPLoadScreen.Instance.LoadLevel ("NewMainScene", true, level);
+            SceneManager.LoadScene(level);
+            DPLoadScreen.Instance.LoadLevel ("NewMainScene", true, level);
 		}
 
 

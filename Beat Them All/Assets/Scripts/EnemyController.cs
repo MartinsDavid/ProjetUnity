@@ -74,8 +74,6 @@ public class EnemyController : MonoBehaviour
         {
             inFight = true;
             // Auto-fire
-            enemyWeapon = GetComponentInChildren<Transform>();
-
             if (enemyWeapon.position.y < playerBody.position.y + 1f && enemyWeapon.position.y > playerBody.position.y - 1f)
             {
                 if (weaponScript != null && weaponScript.CanAttack)

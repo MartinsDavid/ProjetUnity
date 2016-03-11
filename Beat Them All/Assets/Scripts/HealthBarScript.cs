@@ -1,36 +1,40 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class HealthBarScript : MonoBehaviour {
 
-	public float curHP = 100.0f;
-	public float maxHP = 100.0f;
-	
-	public Texture2D HPBarTexture;
-	public float HPBarLenght;
-	public float PercentOfHP;
-	
-	public string scene;
-	private Animator animator;
-	
-	private bool playedIsDead = false;
+    // GameObject attributes
+    public float curHP;
+    public float maxHP;
+    private Animator animator;
+    private bool playedIsDead = false;
 
-	public AudioClip deathSound;
-	
+    //Player controller script
+    private NewPlayerController playerController;
+
+    // UI attributes
+    public Texture2D HPBarTexture;
+    public float HPBarLenght;
+    public float PercentOfHP;
+
+    //Audio
+    public AudioClip deathSound;	
 	
 	void Start()
 	{
 		animator = GetComponent<Animator>();
-	}
-	
-	
-	
-	void OnGUI () {	
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<NewPlayerController>();
+
+    }
+
+    void OnGUI ()
+    {	
 		if (curHP > 0)
 		{
-			GUI.DrawTexture(new Rect(30,30, HPBarLenght, 20), HPBarTexture);		
-		}	
-	}
+			GUI.DrawTexture(new Rect(30,30, HPBarLenght, 20), HPBarTexture);
+        }
+    }
 
 	void Update () {
 		
@@ -48,14 +52,35 @@ public class HealthBarScript : MonoBehaviour {
 	{
 		AudioSource.PlayClipAtPoint (deathSound, transform.position);
 
-		playedIsDead = true;
-		animator.SetInteger("AnimState", 4);
-		
-		GameObject go = new GameObject ("ClickToContinue");
-		ClickToContinue script = go.AddComponent<ClickToContinue> ();
-		script.scene = Application.loadedLevelName;
-		go.AddComponent<DisplayRestartText> ();
-		
-	}
-	
+        playedIsDead = true;
+        animator.SetTrigger("death");
+
+        GameObject go = new GameObject("ClickToContinue");
+        ClickToContinue script = go.AddComponent<ClickToContinue>();
+        script.scene = SceneManager.GetActiveScene().name; ;
+        go.AddComponent<DisplayRestartText>();
+
+    }
+
+    //When the boss hit the player
+    public void Hit(string attackName, int damage)
+    {
+        playerController.isAttacking = true;
+        curHP -= damage;
+        switch (attackName)
+        {
+            case "Kick":
+                animator.SetTrigger("gotHit");
+                break;
+            case "Sphere":
+                animator.SetTrigger("gotHit");
+                break;
+            case "AttackExe":
+                animator.SetTrigger("gotHit");
+                break;
+        }
+
+
+    }
+
 }

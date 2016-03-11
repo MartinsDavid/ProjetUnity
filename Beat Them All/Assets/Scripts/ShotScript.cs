@@ -22,7 +22,7 @@ public class ShotScript : MonoBehaviour
 
     void Start()
     {
-		healthBar = GameObject.FindGameObjectWithTag ("Player").GetComponent<HealthBarScript> ();
+		healthBar = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBarScript> ();
         // 2 - Limited time to live to avoid any leak
         Destroy(gameObject, 4); // 4sec
     }
@@ -45,8 +45,7 @@ public class ShotScript : MonoBehaviour
 				break;
 			}
 
-
-			Destroy(gameObject);
+		Destroy(gameObject);
 		}
 	}
 

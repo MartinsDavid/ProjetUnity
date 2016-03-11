@@ -3,20 +3,23 @@ using System.Collections;
 
 public class WeaponScript : MonoBehaviour
 {
-
-    //--------------------------------
-    // 1 - Designer variables
-    //--------------------------------
-
+    //Shot variables
     public Transform shotPrefab; // Projectile prefab for shooting
     public float shootingRate; // Cooldown in seconds between two shots
 
+    //Audio
 	public AudioClip projectileSound;
 
     //--------------------------------
     // 2 - Cooldown
     //--------------------------------
     private float shootCooldown;
+
+    // Is the weapon ready to create a new projectile?
+    public bool CanAttack
+    {
+        get { return shootCooldown <= 0f; }
+    }
 
     void Start()
     {
@@ -64,17 +67,6 @@ public class WeaponScript : MonoBehaviour
             {
                 move.direction = transform.right; // towards in 2D space is the right of the sprite
             }
-        }
-    }
-
-    /// <summary>
-    /// Is the weapon ready to create a new projectile?
-    /// </summary>
-    public bool CanAttack
-    {
-        get
-        {
-            return shootCooldown <= 0f;
         }
     }
 }

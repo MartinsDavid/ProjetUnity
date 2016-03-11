@@ -8,11 +8,12 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 432652}
-  - 212: {fileID: 21248372}
-  - 50: {fileID: 5067094}
-  - 58: {fileID: 5803188}
   - 114: {fileID: 11496676}
   - 114: {fileID: 11480662}
+  - 212: {fileID: 21248372}
+  - 95: {fileID: 9510790}
+  - 50: {fileID: 5067094}
+  - 58: {fileID: 5803188}
   m_Layer: 0
   m_Name: BossSphereShoot
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.44999981, y: -5.32000017, z: 0}
+  m_LocalPosition: {x: -28.831188, y: -9.57374, z: 0}
   m_LocalScale: {x: 20, y: 22, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -39,9 +40,10 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167932}
+  m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 0.05
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -55,12 +57,30 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167932}
   m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: .0367380939
+  m_Radius: 0.036738094
+--- !u!95 &9510790
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167932}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 10e01399b99688049a0658cf086226f6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11480662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -84,7 +104,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e136bc05027834eb0d7426cedaf799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  playerTouchedSound1: {fileID: 8300000, guid: 41655380434e40e46acfaf457a9fcabf, type: 3}
+  playerTouchedSound2: {fileID: 8300000, guid: 381d24503cd528a4396c325a342036cc, type: 3}
+  playerTouchedSound3: {fileID: 8300000, guid: 62990dfb0e91d6f47a87cd1bf1691c52, type: 3}
+  damage: 6
   isEnemyShot: 1
 --- !u!212 &21248372
 SpriteRenderer:
@@ -104,21 +127,41 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300652, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: playerTouchedSound1
+      value: 
+      objectReference: {fileID: 8300000, guid: 41655380434e40e46acfaf457a9fcabf, type: 3}
+    - target: {fileID: 0}
+      propertyPath: playerTouchedSound2
+      value: 
+      objectReference: {fileID: 8300000, guid: 381d24503cd528a4396c325a342036cc, type: 3}
+    - target: {fileID: 0}
+      propertyPath: playerTouchedSound3
+      value: 
+      objectReference: {fileID: 8300000, guid: 62990dfb0e91d6f47a87cd1bf1691c52, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 167932}

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class NewPlayerController : MonoBehaviour {
 
-
+    //Audio
 	public AudioClip punchSound1;
 	public AudioClip punchSound2;
 	public AudioClip punchSound3;
@@ -104,7 +104,7 @@ public class NewPlayerController : MonoBehaviour {
          if (Input.GetButtonDown("Fire1") && !isJumping && !isAttacking)
          {
              isAttacking = true;
-             myAnimator.SetTrigger("attacked");
+             myAnimator.SetTrigger("attack");
          }
 
      }
@@ -151,9 +151,11 @@ public class NewPlayerController : MonoBehaviour {
             //If the difference isn't to far in either direction, then...
             if (yDifference < 0.85f && yDifference > -0.85f)
             {
-
-                //Call the enemy script, and tell it that we hit them !
-                hit.collider.GetComponent<EnemyController>().HitEnemy();
+                if (hit.collider.gameObject.tag == "Enemy")
+                    //Call the enemy script, and tell it that we hit them !
+                    hit.collider.GetComponent<EnemyController>().HitEnemy();
+                else
+                    hit.collider.GetComponent<BossController>().HitEnemy();
             }
         }
     }

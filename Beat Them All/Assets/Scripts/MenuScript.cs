@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
@@ -52,7 +53,7 @@ public class MenuScript : MonoBehaviour {
 	public void LoadScene()
 	{
 		AudioSource.PlayClipAtPoint (playGameSound, transform.position);
-		Application.LoadLevel (scene);
+        SceneManager.LoadScene(scene);
 	}
 
 	public void ExitPress()
@@ -81,8 +82,6 @@ public class MenuScript : MonoBehaviour {
 		startText.enabled = false;
 		exitText.enabled = false;
 	}
-
-
 	
 	public void OnEnable()
 	{
@@ -162,12 +161,4 @@ public class MenuScript : MonoBehaviour {
 	{
 		EventSystem.current.SetSelectedGameObject(go);
 	}
-
-
-
-
-
-
-
-
 }

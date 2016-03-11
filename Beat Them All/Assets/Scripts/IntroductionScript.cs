@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -23,14 +24,14 @@ public class IntroductionScript : MonoBehaviour {
 	{	
 		if (Input.GetKey ("escape"))
 		{
-			Application.LoadLevel (level);
-		}	
-	}
+            SceneManager.LoadScene(level);
+        }
+    }
 
     IEnumerator LoadLevel()
     {
         yield return new WaitForSeconds(7);
-        Application.LoadLevel(level);
+        SceneManager.LoadScene(level);
     }
 
 }
