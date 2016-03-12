@@ -8,6 +8,7 @@ public class BossController : MonoBehaviour
     private Transform playerBody;
     private Transform attackPoint3;
     private Transform attackPoint4;
+    private HealthBarScript playerHP;
 
     //Movement Controls
     public float moveSpeed;
@@ -25,7 +26,7 @@ public class BossController : MonoBehaviour
     public Transform enemyBody;
     public Transform enemyFeet;
     public SpriteRenderer enemySprite;
-    public Animator enemyAnimator;
+    public Animator bossAnimator;
 
     //Cooldowns
     public float coolDownKick;
@@ -84,6 +85,9 @@ public class BossController : MonoBehaviour
         //Find attackPoints 3 and 4
         attackPoint3 = GameObject.Find("AttackPoint3").transform;
         attackPoint4 = GameObject.Find("AttackPoint4").transform;
+
+        //Find the player HealthBarScript
+        playerHP = playerBody.GetComponent<HealthBarScript>();
         
         //Find the Weapon
         enemyWeapon = GetComponentInChildren<Transform>();
@@ -96,6 +100,11 @@ public class BossController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Check the player hp
+        if (playerHP.curHP <= 0)
+        {
+            bossAnimator.SetBool("bossWin", true);
+        }
         //Set the enemy sprite order equal to our enemy's feet Y position
         enemySprite.sortingOrder = -(int)enemyFeet.position.y;
 
@@ -157,20 +166,21 @@ public class BossController : MonoBehaviour
 
     private void PatternOneDetails(float distance, Transform attackPoint)
     {
+
         if (CanKick)
         {
-            enemyAnimator.SetTrigger("kick");
+            inFight = true;
+            bossAnimator.SetTrigger("kick");
         }
         else if (CanShootSphere)
         {
-            coolDownSphere += sphereRate;
             inFight = true;
+            coolDownSphere += sphereRate;
             if (enemyWeapon.position.y < playerBody.position.y + 1f && enemyWeapon.position.y > playerBody.position.y - 1f)
             {
-                
                 if (weaponScript != null && weaponScript.CanAttack)
                 {
-                    enemyAnimator.SetTrigger("shootSphere");
+                    bossAnimator.SetTrigger("shootSphere");
                 }
             }
         }
@@ -178,6 +188,7 @@ public class BossController : MonoBehaviour
         {
             MoveInDirection(attackPoint);
         }
+        else inFight = false;
     }  
 
     private void PatternTwo()
@@ -202,25 +213,27 @@ public class BossController : MonoBehaviour
 
     private void PatternTwoDetails(float distance, Transform attackPoint)
     {
-        if(CanUseExe)
+        if (CanUseExe)
         {
             inFight = true;
-            enemyAnimator.SetTrigger("AttackExe");
+            coolDownExe += exeRate;
+            bossAnimator.SetTrigger("AttackExe");
         }
-        if (CanKick)
+        else if (CanKick)
         {
-            enemyAnimator.SetTrigger("kick");
+            inFight = true;
+            bossAnimator.SetTrigger("kick");
             Attacking();
         }
         else if (CanShootSphere)
         {
-            coolDownSphere += sphereRate;
             inFight = true;
+            coolDownSphere += sphereRate;
             if (enemyWeapon.position.y < playerBody.position.y + 1f && enemyWeapon.position.y > playerBody.position.y - 1f)
             {
                 if (weaponScript != null && weaponScript.CanAttack)
                 {
-                    enemyAnimator.SetTrigger("shootSphere");
+                    bossAnimator.SetTrigger("shootSphere");
                 }
             }
         }
@@ -228,6 +241,7 @@ public class BossController : MonoBehaviour
         {
             MoveInDirection(attackPoint);
         }
+        else inFight = false;
     }
 
     public void WeaponScriptAttack()
@@ -238,9 +252,8 @@ public class BossController : MonoBehaviour
     // AttackExe Launch when the Boss_SpecialAttack animation start
     public void AttackExe()
     {
-        coolDownExe += exeRate;
         onExeMode = true;
-        transform.position += (playerBody.position - transform.position).normalized * moveSpeed * Time.deltaTime * 1.5f;
+        transform.position += (playerBody.position - transform.position).normalized * moveSpeed * Time.deltaTime * 15f;
     }
 
     // This OnTriggerEnter2D method allow the AttackExe to deal damage to the player
@@ -256,27 +269,26 @@ public class BossController : MonoBehaviour
     private void MoveInDirection(Transform tempTrans)
     {
         transform.position += (tempTrans.position - transform.position).normalized * moveSpeed * Time.deltaTime;
-        enemyAnimator.SetInteger("animState", 1);
+        bossAnimator.SetInteger("animState", 1);
     }
 
     //When our player hit the boss
     public void HitEnemy()
     {
-        healthPoint -= 1;
-
+        healthPoint -= 3;
+        inFight = true;
         if (healthPoint <= 0)
         {
             isDead = true;
-            enemyAnimator.SetTrigger("death");
+            bossAnimator.SetTrigger("death");
         }
         else
-        {
-            inFight = true;
-            enemyAnimator.SetTrigger("gotHit");
+        {          
+            bossAnimator.SetTrigger("gotHit");
         }
 
         //Check the Boss's hp to change the pattern if the boss is "midLife"
-        if (healthPoint == maxHealth/2)
+        if (healthPoint <= maxHealth/2)
             rageMode = true;
     }
 

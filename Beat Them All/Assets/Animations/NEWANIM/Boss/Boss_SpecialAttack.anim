@@ -20,51 +20,51 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300546, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.03846154
+    - time: 0.035714287
       value: {fileID: 21300548, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.07692308
+    - time: 0.071428575
       value: {fileID: 21300564, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.115384616
+    - time: 0.10714286
       value: {fileID: 21300550, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.15384616
+    - time: 0.14285715
       value: {fileID: 21300566, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.1923077
+    - time: 0.17857143
       value: {fileID: 21300552, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.23076923
+    - time: 0.21428572
       value: {fileID: 21300568, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.26923078
+    - time: 0.25
       value: {fileID: 21300554, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.30769232
+    - time: 0.2857143
       value: {fileID: 21300570, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.34615386
+    - time: 0.32142857
       value: {fileID: 21300556, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.3846154
+    - time: 0.35714287
       value: {fileID: 21300572, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.42307693
+    - time: 0.39285713
       value: {fileID: 21300558, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.46153846
+    - time: 0.42857143
       value: {fileID: 21300574, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.5
+    - time: 0.4642857
       value: {fileID: 21300560, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.53846157
+    - time: 0.5
       value: {fileID: 21300576, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.5769231
+    - time: 0.53571427
       value: {fileID: 21300562, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.61538464
+    - time: 0.5714286
       value: {fileID: 21300578, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.65384614
+    - time: 0.60714287
       value: {fileID: 21300580, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.6923077
+    - time: 0.64285713
       value: {fileID: 21300582, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.7307692
+    - time: 0.6785714
       value: {fileID: 21300584, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.7692308
+    - time: 0.71428573
       value: {fileID: 21300586, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.8076923
+    - time: 0.75
       value: {fileID: 21300006, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.84615386
+    - time: 0.78571427
       value: {fileID: 21300004, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
-    - time: 0.88461536
+    - time: 0.8214286
       value: {fileID: 21300006, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
     attribute: m_Sprite
     path: EnemyBody
@@ -77,7 +77,7 @@ AnimationClip:
     path: Feet and Shadow
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 26
+  m_SampleRate: 28
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -127,7 +127,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.9230769
+    m_StopTime: 0.85714287
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -155,7 +155,126 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.88461536
+  - time: 0.035714287
+    functionName: AttackExe
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.071428575
+    functionName: AttackExe
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.10714286
+    functionName: AttackExe
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.14285715
+    functionName: AttackExe
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.17857143
+    functionName: AttackExe
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.21428572
+    functionName: AttackExe
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.25
+    functionName: AttackExe
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.2857143
+    functionName: AttackExe
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.32142857
+    functionName: AttackExe
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.35714287
+    functionName: AttackExe
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.39285713
+    functionName: AttackExe
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.42857143
+    functionName: AttackExe
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.4642857
+    functionName: AttackExe
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.5
+    functionName: AttackExe
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.53571427
+    functionName: AttackExe
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.5714286
+    functionName: AttackExe
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.78571427
+    functionName: StopFight
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.8214286
     functionName: StopFight
     data: 
     objectReferenceParameter: {fileID: 0}

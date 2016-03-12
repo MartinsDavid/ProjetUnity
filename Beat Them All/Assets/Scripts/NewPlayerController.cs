@@ -121,6 +121,11 @@ public class NewPlayerController : MonoBehaviour {
         isAttacking = false; ;
     }
 
+    void PlayerDie()
+    {
+        isDead = true;
+    }
+
     //This is activatd via an event in the Player_Attack animation
     void Attacking()
     {
@@ -136,7 +141,6 @@ public class NewPlayerController : MonoBehaviour {
 			break;
 		}
 	
-
         //Shot a ray out in the "right" direction.
         //As we are rotating our player-body, we multiply Vector2.right by the rotation in order to get the correct "right" direction
         RaycastHit2D hit = Physics2D.Raycast(attackRayStart.position, playerBody.rotation * Vector2.right, 2);
@@ -144,7 +148,6 @@ public class NewPlayerController : MonoBehaviour {
         //If our collider is not null, then...
         if (hit.collider != null)
         {
-
             //Get the difference between our Y position and the hit colliders Y position
             float yDifference = transform.position.y - hit.collider.transform.position.y;
 

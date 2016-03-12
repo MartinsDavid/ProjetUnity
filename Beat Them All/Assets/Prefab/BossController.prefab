@@ -28,9 +28,10 @@ GameObject:
   - 95: {fileID: 9520608}
   - 58: {fileID: 5823594}
   - 50: {fileID: 5081584}
+  - 212: {fileID: 21231318}
   m_Layer: 0
   m_Name: BossController
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,18 +207,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
-  healthPoint: 10
-  maxHealth: 10
+  healthPoint: 20
+  maxHealth: 20
   isDead: 0
   inFight: 0
   rageMode: 0
   enemyBody: {fileID: 422000}
   enemyFeet: {fileID: 452120}
   enemySprite: {fileID: 21245010}
-  enemyAnimator: {fileID: 9520608}
+  bossAnimator: {fileID: 9520608}
   coolDownKick: 3
-  coolDownSphere: 7
-  coolDownExe: 15
+  coolDownSphere: 5
+  coolDownExe: 10
   attackRayStart: {fileID: 477302}
   enemyWeapon: {fileID: 445670}
   enemySpawner: {fileID: 493142, guid: 24e39c11112dfb5458f98c6b9041595b, type: 2}
@@ -233,8 +234,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 432652, guid: 581d2f680999aaf4eaa5fefdb19b5a97, type: 2}
-  shootingRate: 6
+  shootingRate: 4
   projectileSound: {fileID: 8300000, guid: 85d8ad9c4c0c0d7468be2dd54ab575e4, type: 3}
+--- !u!212 &21231318
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124986}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!212 &21245010
 SpriteRenderer:
   m_ObjectHideFlags: 1
