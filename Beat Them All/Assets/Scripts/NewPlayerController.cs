@@ -29,37 +29,86 @@ public class NewPlayerController : MonoBehaviour {
     private int count = 0;
     private int salle = 0;
 
+    public static float player;
+
+
+    void Start()
+    {
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -40, 320), Mathf.Clamp(transform.position.y, -11, -5));
+
+    }
+
 
     // Update is called once per frame
-     void Update()
+    void Update()
      {
     
          playerSprite.sortingOrder = -(int)playerFeet.position.y;
 
-         //-----------------------
-         //Movement Section
-         //-----------------------
+        //-----------------------
+        //Movement Section
+        //-----------------------
 
-         enemy = GameObject.FindGameObjectsWithTag("Enemy");
+        player = GameObject.FindGameObjectWithTag("Player").transform.position.x;
 
-         //As long as we are not attacking and we are not dead, we can move.
-         if (!isAttacking && !isDead)
+        enemy = GameObject.FindGameObjectsWithTag("Enemy");
+
+
+        //This will clamp how far up/down/left/right we can go in LOCAL space
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 52 && enemy.Length > 0)
+        {
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 51), Mathf.Clamp(transform.position.y, -11, -5));
+        }
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 52 && enemy.Length == 0)
+        {
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 120), Mathf.Clamp(transform.position.y, -11, -5));
+        }
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 121 && enemy.Length > 0)
+        {
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 120), Mathf.Clamp(transform.position.y, -11, -5));
+        }
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 121 && enemy.Length == 0)
+        {
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 187), Mathf.Clamp(transform.position.y, -11, -5));
+        }
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 188 && enemy.Length > 0)
+        {
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 187), Mathf.Clamp(transform.position.y, -11, -5));
+        }
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 188 && enemy.Length == 0)
+        {
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 255), Mathf.Clamp(transform.position.y, -11, -5));
+        }
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 256 && enemy.Length > 0)
+        {
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 255), Mathf.Clamp(transform.position.y, -11, -5));
+        }
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 256 && enemy.Length == 0)
+        {
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 316), Mathf.Clamp(transform.position.y, -11, -5));
+        }
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 317 && enemy.Length > 0)
+        {
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 316), Mathf.Clamp(transform.position.y, -11, -5));
+        }
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 317 && enemy.Length == 0)
+        {
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 316), Mathf.Clamp(transform.position.y, -11, -5));
+        }
+
+        //As long as we are not attacking and we are not dead, we can move.
+        if (!isAttacking && !isDead)
          {
             
-             if (salle == 0 && enemy.Length > 0)
-             {
-                 //This will clamp how far up/down/left/right we can go in LOCAL space
-                 transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 51), Mathf.Clamp(transform.position.y, -11, -5));
-                 count = 1;
-             }
-
-             if (salle == 0 && enemy.Length == 0 && count == 1)
-             {
-                 transform.position = new Vector2(Mathf.Clamp(transform.position.x, -15, 320), Mathf.Clamp(transform.position.y, -11, -5));
-             }
-
-             //187 ---- 255 ---- 316    
-
              //Grab our movement axis
              playerAxisMove = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 

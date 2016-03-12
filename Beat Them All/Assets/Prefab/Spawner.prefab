@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73cd60b564b7469488a550cb728d5443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyLevel: 0
+  enemyLevel: 1
   BossEnemy: {fileID: 0}
   DistanceEnemy: {fileID: 122672, guid: ee092173213b2584ea88cb1ad1639c3e, type: 2}
   totalEnemy: 1
