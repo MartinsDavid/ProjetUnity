@@ -1,0 +1,133 @@
+fileFormatVersion: 2
+guid: 9f91f3515fd33bc4c870d3668b0d4954
+timeCreated: 1457788189
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: pd_tiles_1
+    21300002: pd_tiles_2
+    21300004: pd_tiles_3
+    21300006: pd_tiles_0
+    21300008: pd_tiles_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: pd_tiles_1
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 309
+        width: 474
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -237, y: 85}
+        - {x: -237, y: -85}
+        - {x: 237, y: -85}
+        - {x: 237, y: 85}
+    - name: pd_tiles_2
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 311
+        width: 195
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -97.5, y: 84}
+        - {x: -97.5, y: -84}
+        - {x: 97.5, y: -84}
+        - {x: 97.5, y: 84}
+    - name: pd_tiles_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 160
+        width: 982
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -491, y: 47.5}
+        - {x: -491, y: -47.5}
+        - {x: 491, y: -47.5}
+        - {x: 491, y: 47.5}
+    - name: pd_tiles_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 310
+        width: 192
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -96, y: 84.5}
+        - {x: -96, y: -84.5}
+        - {x: 96, y: -84.5}
+        - {x: 96, y: 84.5}
+    - name: pd_tiles_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 191
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

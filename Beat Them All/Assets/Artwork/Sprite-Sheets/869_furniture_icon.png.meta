@@ -1,0 +1,120 @@
+fileFormatVersion: 2
+guid: a128fa5c67d2b5644b79006f6f8db973
+timeCreated: 1457788190
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: 869_furniture_icon_0
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: 869_furniture_icon_0
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 0
+        width: 284
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 129, y: -210}
+        - {x: 133, y: -207}
+        - {x: 141, y: -194}
+        - {x: 141, y: -145}
+        - {x: 140, y: -120}
+        - {x: 139, y: -96}
+        - {x: 142, y: -59}
+        - {x: 142, y: 7}
+        - {x: 136, y: 44}
+        - {x: 140, y: 53}
+        - {x: 141, y: 76}
+        - {x: 142, y: 112}
+        - {x: 142, y: 115}
+        - {x: 138, y: 137}
+        - {x: 142, y: 142}
+        - {x: 142, y: 193}
+        - {x: 115, y: 220}
+        - {x: 89, y: 232}
+        - {x: 58, y: 240}
+        - {x: -55, y: 240}
+        - {x: -60, y: 239}
+        - {x: -96, y: 228}
+        - {x: -110, y: 220}
+        - {x: -129, y: 206}
+        - {x: -137, y: 191}
+        - {x: -142, y: 175}
+        - {x: -142, y: 143}
+        - {x: -139, y: 137}
+        - {x: -140, y: 118}
+        - {x: -142, y: 98}
+        - {x: -139, y: 55}
+        - {x: -138, y: 52}
+        - {x: -142, y: 12}
+        - {x: -142, y: -46}
+        - {x: -141, y: -54}
+        - {x: -139, y: -71}
+        - {x: -137, y: -94}
+        - {x: -142, y: -104}
+        - {x: -142, y: -122}
+        - {x: -141, y: -130}
+        - {x: -142, y: -145}
+        - {x: -142, y: -195}
+        - {x: -128, y: -212}
+        - {x: -117, y: -218}
+        - {x: -93, y: -230}
+        - {x: -70, y: -237}
+        - {x: -52, y: -240}
+        - {x: 41, y: -240}
+        - {x: 64, y: -238}
+        - {x: 98, y: -229}
+        - {x: 117, y: -218}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -168,7 +168,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 195156, guid: 3ed0f7aa7d1c197419954e4fd95e6d2d, type: 2}
       propertyPath: m_Name
-      value: niveau
+      value: Niveau
       objectReference: {fileID: 0}
     - target: {fileID: 483514, guid: 3ed0f7aa7d1c197419954e4fd95e6d2d, type: 2}
       propertyPath: m_LocalPosition.y
