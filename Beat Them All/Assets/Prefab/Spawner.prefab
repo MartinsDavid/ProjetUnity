@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.7, y: -3.5, z: 0}
+  m_LocalPosition: {x: 247.43066, y: -7.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -60,7 +60,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 12
+  m_Radius: 30
 --- !u!114 &11429274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72,8 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73cd60b564b7469488a550cb728d5443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyLevel: 1
-  BossEnemy: {fileID: 0}
+  enemyLevel: 0
+  BossEnemy: {fileID: 124986, guid: 7feb4760a4f37f34abe7f48ee7526656, type: 2}
   DistanceEnemy: {fileID: 122672, guid: ee092173213b2584ea88cb1ad1639c3e, type: 2}
   totalEnemy: 1
   numEnemy: 0
@@ -82,7 +82,7 @@ MonoBehaviour:
   Spawn: 1
   spawnType: 3
   waveTimer: 0.05
-  totalWaves: 3
+  totalWaves: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -92,7 +92,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: spawnType
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: waveTimer
@@ -106,6 +106,10 @@ Prefab:
       propertyPath: m_Radius
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: BossEnemy
+      value: 
+      objectReference: {fileID: 124986, guid: 7feb4760a4f37f34abe7f48ee7526656, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 115644}

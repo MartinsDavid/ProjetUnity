@@ -35,7 +35,6 @@ public class NewPlayerController : MonoBehaviour {
     void Start()
     {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -40, 320), Mathf.Clamp(transform.position.y, -11, -5));
-
     }
 
 

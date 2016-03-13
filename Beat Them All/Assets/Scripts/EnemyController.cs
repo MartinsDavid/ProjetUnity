@@ -133,7 +133,7 @@ public class EnemyController : MonoBehaviour
     //When our player hit the enemy
     public void HitEnemy()
     {
-        healthPoint -= 1;
+        healthPoint -= 2;
         
         if (healthPoint <= 0)
         {
