@@ -107,7 +107,7 @@ MonoBehaviour:
   playerTouchedSound1: {fileID: 8300000, guid: 41655380434e40e46acfaf457a9fcabf, type: 3}
   playerTouchedSound2: {fileID: 8300000, guid: 381d24503cd528a4396c325a342036cc, type: 3}
   playerTouchedSound3: {fileID: 8300000, guid: 62990dfb0e91d6f47a87cd1bf1691c52, type: 3}
-  damage: 6
+  damage: 4
   isEnemyShot: 1
 --- !u!212 &21248372
 SpriteRenderer:
@@ -165,6 +165,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_GravityScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

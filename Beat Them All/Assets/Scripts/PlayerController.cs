@@ -1,506 +1,213 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
-using System.Collections.Generic;
 
-public class PlayerController : MonoBehaviour
-{
+public class PlayerController : MonoBehaviour {
 
-    public Vector2 moving = new Vector2();
-    bool keyWasHandled = false;
-    bool ManettesHandled = false;
+    //Audio
+	public AudioClip punchSound1;
+	public AudioClip punchSound2;
+	public AudioClip punchSound3;
+	public AudioClip jumpSound;
+
+    //Player Controls
     public Transform playerBody;
-    private Animator animator;
-    public float gJump = -2.5f;
+    public Transform playerFeet;
+    public SpriteRenderer playerSprite;
+    public Transform attackRayStart;
 
-    static float deplacementHorizontal = 0;
-    static float deplacementVertical = 0;
-    delegate void DeplacementDelegate(Vector2 moving, bool keyWasHandled, Transform playerBody, Animator animator);
-    DeplacementDelegate handler = null;
+    //Animation Controls
+    public Animator myAnimator;
 
+    //Movement Controls
+    public float moveSpeed;
+    private Vector2 playerAxisMove;
+    public bool isJumping;
+    public bool isAttacking;
+    public bool isDead;
 
+    private GameObject[] enemy;
+    private int count = 0;
+    private int salle = 0;
 
-    private bool attacking = false;
-    private float attackTimer = 0;
-    private float attackCd = 0.8f;
-    public Collider2D attackTrigger;
-    private Animator anim;
-
-
-    void Awake()
-    {
-        anim = gameObject.GetComponent<Animator>();
-        attackTrigger.enabled = false;
-    }
+    public static float player;
 
 
-    // Use this for initialization
     void Start()
     {
-        animator = GetComponent<Animator>();
-        string[] manettes = Input.GetJoystickNames();
-
-        if (manettes[0].ToLower().Contains("playstation"))
-        {
-            // Instantiate the delegate.
-            handler = deplacementDelegateManettePlaystation(moving, keyWasHandled, playerBody, animator);
-        }
-        else if (manettes[0].ToLower().Contains("xbox"))
-        {
-            // Instantiate the delegate.
-            handler = deplacementDelegateManetteXbox(moving, keyWasHandled, playerBody, animator);
-        }
-        else
-        {
-            // Instantiate the delegate.
-            handler = deplacementsDelegateClavier(moving, keyWasHandled, playerBody, animator);
-        }
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -40, 320), Mathf.Clamp(transform.position.y, -11, -5));
     }
-
-
-    private DeplacementDelegate deplacementsDelegateClavier(Vector2 moving, bool keyWasHandled, Transform playerBody, Animator animator)
-    {
-        //deplacementsClavier(this.moving, this.keyWasHandled, this.playerBody, this.animator);
-        moving.x = moving.y = 0;
-
-        if (Input.GetKeyDown("right") || Input.GetKeyDown(KeyCode.D))
-        {
-            moving.x = 1;
-            playerBody.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-            animator.SetInteger("AnimState", 1);
-            //keyWasHandled = true;
-        }
-        else if (Input.GetKeyDown("left") || Input.GetKeyDown(KeyCode.Q))
-        {
-            moving.x = -1;
-            playerBody.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-            animator.SetInteger("AnimState", 1);
-            // keyWasHandled = true;
-        }
-
-        if (Input.GetKeyDown("up") || Input.GetKeyDown(KeyCode.Z))
-        {
-            moving.y = 1;
-            animator.SetInteger("AnimState", 1);
-            //keyWasHandled = true;
-        }
-
-        else if (Input.GetKeyDown("down") || Input.GetKeyDown(KeyCode.S))
-        {
-            moving.y = -1;
-            animator.SetInteger("AnimState", 1);
-            //keyWasHandled = true;
-        }
-
-        if (Input.GetKeyUp("right") || Input.GetKeyUp("left") || Input.GetKeyUp(KeyCode.Q) || Input.GetKeyUp(KeyCode.D))
-        {
-            animator.SetInteger("AnimState", 0);
-        }
-
-        if (Input.GetKeyUp("up") || Input.GetKeyUp("down") || Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.S))
-        {
-            animator.SetInteger("AnimState", 0);
-        }
-
-        if (Input.GetKeyDown("space") && keyWasHandled == false)
-        {
-            animator.SetInteger("AnimState", 2);
-            // transform.Translate(0, 0.2f, 0);
-            keyWasHandled = true;
-
-        }
-        if (Input.GetKeyUp("space"))
-        {
-            animator.SetInteger("AnimState", 0);
-            keyWasHandled = false;
-        }
-
-        //Attaque du joueur
-        if (Input.GetKeyDown("f") && !attacking)
-        {
-            attacking = true;
-            attackTimer = attackCd;
-
-            attackTrigger.enabled = true;
-        }
-
-        if (attacking)
-        {
-            if (attackTimer > 0)
-            {
-                attackTimer -= Time.deltaTime;
-            }
-            else
-            {
-                attacking = false;
-                attackTrigger.enabled = false;
-            }
-            anim.SetBool("Attacking", attacking);
-        }
-
-
-        return handler;
-    }
-
-    private DeplacementDelegate deplacementDelegateManettePlaystation(Vector2 moving, bool keyWasHandled, Transform playerBody, Animator animator)
-    {
-        //deplacementManettePlaystation(this.moving, this.keyWasHandled, this.playerBody, this.animator);
-        moving.x = moving.y = 0;
-
-        deplacementHorizontal = Input.GetAxis("Horizontal");
-        if (deplacementHorizontal >= 0)
-        {
-            moving.x = 1;
-            playerBody.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-            animator.SetInteger("AnimState", 1);
-            //keyWasHandled = true;
-        }
-        else if (deplacementHorizontal < 0)
-        {
-            moving.x = -1;
-            playerBody.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-            animator.SetInteger("AnimState", 1);
-            // keyWasHandled = true;
-        }
-
-        deplacementVertical = Input.GetAxis("Vertical");
-        if (deplacementVertical > 0)
-        {
-            moving.y = 1;
-            animator.SetInteger("AnimState", 1);
-            //keyWasHandled = true;
-        }
-
-        else if (deplacementVertical <= 0)
-        {
-            moving.y = -1;
-            animator.SetInteger("AnimState", 1);
-            //keyWasHandled = true;
-        }
-
-        if (deplacementHorizontal == 0)
-        {
-            animator.SetInteger("AnimState", 0);
-        }
-
-        if (deplacementVertical == 0)
-        {
-            animator.SetInteger("AnimState", 0);
-        }
-
-        if (Input.GetKeyDown(KeyCode.JoystickButton2) && keyWasHandled == false)
-        {
-            animator.SetInteger("AnimState", 2);
-            // transform.Translate(0, 0.2f, 0);
-            keyWasHandled = true;
-
-        }
-        if (Input.GetKeyUp(KeyCode.JoystickButton2))
-        {
-            animator.SetInteger("AnimState", 0);
-            keyWasHandled = false;
-        }
-        return handler;
-    }
-
-    private DeplacementDelegate deplacementDelegateManetteXbox(Vector2 moving, bool keyWasHandled, Transform playerBody, Animator animator)
-    {
-        //deplacementManetteXbox(this.moving, this.keyWasHandled, this.playerBody, this.animator);
-        moving.x = moving.y = 0;
-
-        deplacementHorizontal = Input.GetAxis("Horizontal");
-        if (deplacementHorizontal >= 0)
-        {
-            moving.x = 1;
-            playerBody.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-            animator.SetInteger("AnimState", 1);
-            //keyWasHandled = true;
-        }
-        else if (deplacementHorizontal < 0)
-        {
-            moving.x = -1;
-            playerBody.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-            animator.SetInteger("AnimState", 1);
-            // keyWasHandled = true;
-        }
-
-        deplacementVertical = Input.GetAxis("Vertical");
-        if (deplacementVertical > 0)
-        {
-            moving.y = 1;
-            animator.SetInteger("AnimState", 1);
-            //keyWasHandled = true;
-        }
-
-        else if (deplacementVertical <= 0)
-        {
-            moving.y = -1;
-            animator.SetInteger("AnimState", 1);
-            //keyWasHandled = true;
-        }
-
-        if (deplacementHorizontal == 0)
-        {
-            animator.SetInteger("AnimState", 0);
-        }
-
-        if (deplacementVertical == 0)
-        {
-            animator.SetInteger("AnimState", 0);
-        }
-
-        if (Input.GetKeyDown(KeyCode.JoystickButton0) && keyWasHandled == false)
-        {
-            animator.SetInteger("AnimState", 2);
-            // transform.Translate(0, 0.2f, 0);
-            keyWasHandled = true;
-
-        }
-        if (Input.GetKeyUp(KeyCode.JoystickButton0))
-        {
-            animator.SetInteger("AnimState", 0);
-            keyWasHandled = false;
-        }
-        return handler;
-    }
-
-
-    //public void deplacementsClavier(Vector2 moving, bool keyWasHandled, Transform playerBody, Animator animator)
-    //{
-    //    moving.x = moving.y = 0;
-
-    //    if (Input.GetKey("right") || Input.GetKey(KeyCode.D))
-    //    {
-    //        moving.x = 1;
-    //        playerBody.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-    //        animator.SetInteger("AnimState", 1);
-    //        //keyWasHandled = true;
-    //    }
-    //    else if (Input.GetKey("left") || Input.GetKey(KeyCode.Q))
-    //    {
-    //        moving.x = -1;
-    //        playerBody.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-    //        animator.SetInteger("AnimState", 1);
-    //        // keyWasHandled = true;
-    //    }
-
-    //    if (Input.GetKey("up") || Input.GetKey(KeyCode.Z))
-    //    {
-    //        moving.y = 1;
-    //        animator.SetInteger("AnimState", 1);
-    //        //keyWasHandled = true;
-    //    }
-
-    //    else if (Input.GetKey("down") || Input.GetKey(KeyCode.S))
-    //    {
-    //        moving.y = -1;
-    //        animator.SetInteger("AnimState", 1);
-    //        //keyWasHandled = true;
-    //    }
-
-    //    if (Input.GetKeyUp("right") || Input.GetKeyUp("left") || Input.GetKeyUp(KeyCode.Q) || Input.GetKeyUp(KeyCode.D))
-    //    {
-    //        animator.SetInteger("AnimState", 0);
-    //    }
-
-    //    if (Input.GetKeyUp("up") || Input.GetKeyUp("down") || Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.S))
-    //    {
-    //        animator.SetInteger("AnimState", 0);
-    //    }
-
-    //    if (Input.GetKey("space") && keyWasHandled == false)
-    //    {
-    //        animator.SetInteger("AnimState", 2);
-    //        // transform.Translate(0, 0.2f, 0);
-    //        keyWasHandled = true;
-
-    //    }
-    //    if (Input.GetKeyUp("space"))
-    //    {
-    //        animator.SetInteger("AnimState", 0);
-    //        keyWasHandled = false;
-    //    }
-    //}
-
-    //public void deplacementManettePlaystation(Vector2 moving, bool keyWasHandled, Transform playerBody, Animator animator)
-    //{
-    //    moving.x = moving.y = 0;
-
-    //    deplacementHorizontal = Input.GetAxis("Horizontal");
-    //    if (deplacementHorizontal >= 0)
-    //    {
-    //        moving.x = 1;
-    //        playerBody.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-    //        animator.SetInteger("AnimState", 1);
-    //        //keyWasHandled = true;
-    //    }
-    //    else if (deplacementHorizontal < 0)
-    //    {
-    //        moving.x = -1;
-    //        playerBody.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-    //        animator.SetInteger("AnimState", 1);
-    //        // keyWasHandled = true;
-    //    }
-
-    //    deplacementVertical = Input.GetAxis("Vertical");
-    //    if (deplacementVertical > 0)
-    //    {
-    //        moving.y = 1;
-    //        animator.SetInteger("AnimState", 1);
-    //        //keyWasHandled = true;
-    //    }
-
-    //    else if (deplacementVertical <= 0)
-    //    {
-    //        moving.y = -1;
-    //        animator.SetInteger("AnimState", 1);
-    //        //keyWasHandled = true;
-    //    }
-
-    //    if (deplacementHorizontal == 0)
-    //    {
-    //        animator.SetInteger("AnimState", 0);
-    //    }
-
-    //    if (deplacementVertical == 0)
-    //    {
-    //        animator.SetInteger("AnimState", 0);
-    //    }
-
-    //    if (Input.GetKey(KeyCode.JoystickButton2) && keyWasHandled == false)
-    //    {
-    //        animator.SetInteger("AnimState", 2);
-    //        // transform.Translate(0, 0.2f, 0);
-    //        keyWasHandled = true;
-
-    //    }
-    //    if (Input.GetKeyUp(KeyCode.JoystickButton2))
-    //    {
-    //        animator.SetInteger("AnimState", 0);
-    //        keyWasHandled = false;
-    //    }
-    //}
-
-    //public void deplacementManetteXbox(Vector2 moving, bool keyWasHandled, Transform playerBody, Animator animator)
-    //{
-    //    moving.x = moving.y = 0;
-
-    //    deplacementHorizontal = Input.GetAxis("Horizontal");
-    //    if (deplacementHorizontal >= 0)
-    //    {
-    //        moving.x = 1;
-    //        playerBody.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-    //        animator.SetInteger("AnimState", 1);
-    //        //keyWasHandled = true;
-    //    }
-    //    else if (deplacementHorizontal < 0)
-    //    {
-    //        moving.x = -1;
-    //        playerBody.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-    //        animator.SetInteger("AnimState", 1);
-    //        // keyWasHandled = true;
-    //    }
-
-    //    deplacementVertical = Input.GetAxis("Vertical");
-    //    if (deplacementVertical > 0)
-    //    {
-    //        moving.y = 1;
-    //        animator.SetInteger("AnimState", 1);
-    //        //keyWasHandled = true;
-    //    }
-
-    //    else if (deplacementVertical <= 0)
-    //    {
-    //        moving.y = -1;
-    //        animator.SetInteger("AnimState", 1);
-    //        //keyWasHandled = true;
-    //    }
-
-    //    if (deplacementHorizontal == 0)
-    //    {
-    //        animator.SetInteger("AnimState", 0);
-    //    }
-
-    //    if (deplacementVertical == 0)
-    //    {
-    //        animator.SetInteger("AnimState", 0);
-    //    }
-
-    //    if (Input.GetKey(KeyCode.JoystickButton0) && keyWasHandled == false)
-    //    {
-    //        animator.SetInteger("AnimState", 2);
-    //        // transform.Translate(0, 0.2f, 0);
-    //        keyWasHandled = true;
-
-    //    }
-    //    if (Input.GetKeyUp(KeyCode.JoystickButton0))
-    //    {
-    //        animator.SetInteger("AnimState", 0);
-    //        keyWasHandled = false;
-    //    }
-    //}
 
 
     // Update is called once per frame
     void Update()
-    {
-        // Call the delegate.
-        //handler(moving, keyWasHandled, playerBody, animator);
+     {
+    
+         playerSprite.sortingOrder = -(int)playerFeet.position.y;
 
-        if (Input.GetJoystickNames().ToString().ToLower().Contains("playstation"))
+        //-----------------------
+        //Movement Section
+        //-----------------------
+
+        player = GameObject.FindGameObjectWithTag("Player").transform.position.x;
+
+        enemy = GameObject.FindGameObjectsWithTag("Enemy");
+
+
+        //This will clamp how far up/down/left/right we can go in LOCAL space
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 52 && enemy.Length > 0)
         {
-            // Instantiate the delegate.
-            handler = deplacementDelegateManettePlaystation(moving, keyWasHandled, playerBody, animator);
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 51), Mathf.Clamp(transform.position.y, -11, -5));
         }
-        else if (Input.GetJoystickNames().ToString().ToLower().Contains("xbox"))
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 52 && enemy.Length == 0)
         {
-            // Instantiate the delegate.
-            handler = deplacementDelegateManetteXbox(moving, keyWasHandled, playerBody, animator);
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 120), Mathf.Clamp(transform.position.y, -11, -5));
         }
-        else
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 121 && enemy.Length > 0)
         {
-            // Instantiate the delegate.
-            handler = deplacementsDelegateClavier(moving, keyWasHandled, playerBody, animator);
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 120), Mathf.Clamp(transform.position.y, -11, -5));
         }
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 121 && enemy.Length == 0)
+        {
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 187), Mathf.Clamp(transform.position.y, -11, -5));
+        }
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 188 && enemy.Length > 0)
+        {
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 187), Mathf.Clamp(transform.position.y, -11, -5));
+        }
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 188 && enemy.Length == 0)
+        {
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 255), Mathf.Clamp(transform.position.y, -11, -5));
+        }
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 256 && enemy.Length > 0)
+        {
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 255), Mathf.Clamp(transform.position.y, -11, -5));
+        }
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 256 && enemy.Length == 0)
+        {
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 316), Mathf.Clamp(transform.position.y, -11, -5));
+        }
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 317 && enemy.Length > 0)
+        {
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 316), Mathf.Clamp(transform.position.y, -11, -5));
+        }
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x >= -27 && GameObject.FindGameObjectWithTag("Player").transform.position.x <= 317 && enemy.Length == 0)
+        {
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -40, 316), Mathf.Clamp(transform.position.y, -11, -5));
+        }
+
+        //As long as we are not attacking and we are not dead, we can move.
+        if (!isAttacking && !isDead)
+         {
+            
+             //Grab our movement axis
+             playerAxisMove = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+             //Move our player around
+             transform.Translate(playerAxisMove * moveSpeed * Time.deltaTime);
+
+             //Checks to see which way our player is going and flips their facing direction
+             if (playerAxisMove.x > 0)
+             {
+                 playerBody.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+             }
+             else if (playerAxisMove.x < 0)
+             {
+                 playerBody.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+             }
+
+             //Checks to see if our player is moving
+             //If they are, activate the "walking" variable
+             if (Mathf.Abs(playerAxisMove.x) > 0 || Mathf.Abs(playerAxisMove.y) > 0)
+             {
+                 myAnimator.SetBool("isWalking", true);
+             }
+             else
+             {
+                 myAnimator.SetBool("isWalking", false);
+             }
+         }
+
+         //-----------------------
+         //Button Detect Section
+         //-----------------------
+
+         //Did we jump?
+         if (Input.GetButtonDown("Jump") && !isJumping && !isAttacking)
+         {
+             isJumping = true;
+             myAnimator.SetTrigger("jumped");
+             AudioSource.PlayClipAtPoint (jumpSound, transform.position);
+         }
+
+         //Did we attack?
+         if (Input.GetButtonDown("Fire1") && !isJumping && !isAttacking)
+         {
+             isAttacking = true;
+             myAnimator.SetTrigger("attack");
+         }
+
+     }
+     
+    //This is activated via an event in the Player_Jump animation
+    void JumpCompleted()
+    {
+        isJumping = false;
     }
 
+    //This is activated via an event in the Player_Attack animation
+    void AttackCompleted()
+    {
+        isAttacking = false; ;
+    }
 
+    void PlayerDie()
+    {
+        isDead = true;
+    }
 
-    //XBOX CONTROLLER
+    //This is activatd via an event in the Player_Attack animation
+    void Attacking()
+    {
+		switch (Random.Range(0,3) % 3) {
+		case 0:
+			AudioSource.PlayClipAtPoint (punchSound1, transform.position);
+			break;
+		case 1 :
+			AudioSource.PlayClipAtPoint (punchSound2, transform.position);
+			break;
+		case 2 :
+			AudioSource.PlayClipAtPoint (punchSound3, transform.position);
+			break;
+		}
+	
+        //Shot a ray out in the "right" direction.
+        //As we are rotating our player-body, we multiply Vector2.right by the rotation in order to get the correct "right" direction
+        RaycastHit2D hit = Physics2D.Raycast(attackRayStart.position, playerBody.rotation * Vector2.right, 2);
 
-    //Buttons (Key or Mouse Button) 
-    //Axis (Joystick Axis) 
+        //If our collider is not null, then...
+        if (hit.collider != null)
+        {
+            //Get the difference between our Y position and the hit colliders Y position
+            float yDifference = transform.position.y - hit.collider.transform.position.y;
 
-    //joystick button 0 = A  X axis = Left analog X  
-    //joystick button 1 = B  Y axis = Left analog Y  
-    //joystick button 2 = X  3rd axis = LT/RT  
-    //joystick button 3 = Y  4th axis = Right analog X  
-    //joystick button 4 = L  5th axis = Right analog Y  
-    //joystick button 5 = R  6th axis = Dpad X  
-    //joystick button 6 = Back  7th axis = Dpad Y  
-    //joystick button 7 = Home  
-    //joystick button 8 = Left analog press  
-    //joystick button 9 = Right analog press  
-
-
-
-    //PS3 CONTROLLER
-
-    //Buttons (Key or Mouse Button) 
-    //Axis (Joystick Axis) 
-
-    //joystick button 0 = Square  X Axis = LeftAnalogX  
-    //joystick button 1 = X  Y Axis = LeftAnalogY  
-    //joystick button 2 = Circle  3rd Axis = RightAnalogX  
-    //joystick button 3 = Triangle  4th Axis = RightAnalogY  
-    //joystick button 4 = L1  5th Axis = Dpad X  
-    //joystick button 5 = R1  6th Axis = Dpad Y  
-    //joystick button 6 = L2  
-    //joystick button 7 = R2  
-    //joystick button 8 = Select  
-    //joystick button 9 = Right analog press  
-    //joystick button 10 = (to be updated)  
-    //joystick button 11 = (to be updated)  
-    //joystick button 12 = Home 
-
+            //If the difference isn't to far in either direction, then...
+            if (yDifference < 0.85f && yDifference > -0.85f)
+            {
+                if (hit.collider.gameObject.tag == "Enemy")
+                    //Call the enemy script, and tell it that we hit them !
+                    hit.collider.GetComponent<EnemyController>().HitEnemy();
+                else
+                    hit.collider.GetComponent<BossController>().HitEnemy();
+            }
+        }
+    }
 }

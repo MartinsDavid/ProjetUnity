@@ -253,7 +253,7 @@ public class BossController : MonoBehaviour
     public void AttackExe()
     {
         onExeMode = true;
-        transform.position += (playerBody.position - transform.position).normalized * moveSpeed * Time.deltaTime * 15f;
+        transform.position += (playerBody.position - transform.position).normalized * moveSpeed * Time.deltaTime * 10f;
     }
 
     // This OnTriggerEnter2D method allow the AttackExe to deal damage to the player
@@ -261,7 +261,7 @@ public class BossController : MonoBehaviour
     {
         if(onExeMode)
             if(target.gameObject.tag == "Player")
-                target.GetComponent<HealthBarScript>().Hit("AttackExe", 10);
+                target.GetComponent<HealthBarScript>().Hit("AttackExe", 7);
         onExeMode = false;
     }
 

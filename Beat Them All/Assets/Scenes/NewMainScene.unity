@@ -354,7 +354,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 115644, guid: 24e39c11112dfb5458f98c6b9041595b, type: 2}
       propertyPath: m_Name
-      value: Spawner (5)
+      value: Spawner (6)
       objectReference: {fileID: 0}
     - target: {fileID: 11429274, guid: 24e39c11112dfb5458f98c6b9041595b, type: 2}
       propertyPath: enemyLevel
@@ -362,7 +362,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11429274, guid: 24e39c11112dfb5458f98c6b9041595b, type: 2}
       propertyPath: totalWaves
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11429274, guid: 24e39c11112dfb5458f98c6b9041595b, type: 2}
       propertyPath: spawnType
@@ -470,7 +470,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 115644, guid: 24e39c11112dfb5458f98c6b9041595b, type: 2}
       propertyPath: m_Name
-      value: Spawner (2)
+      value: Spawner (5)
       objectReference: {fileID: 0}
     - target: {fileID: 11429274, guid: 24e39c11112dfb5458f98c6b9041595b, type: 2}
       propertyPath: enemyLevel
@@ -728,7 +728,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 115644, guid: 24e39c11112dfb5458f98c6b9041595b, type: 2}
       propertyPath: m_Name
-      value: Spawner (4)
+      value: Spawner (3)
       objectReference: {fileID: 0}
     - target: {fileID: 11429274, guid: 24e39c11112dfb5458f98c6b9041595b, type: 2}
       propertyPath: enemyLevel
@@ -1098,7 +1098,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 115644, guid: 24e39c11112dfb5458f98c6b9041595b, type: 2}
       propertyPath: m_Name
-      value: Spawner (3)
+      value: Spawner (2)
       objectReference: {fileID: 0}
     - target: {fileID: 11429274, guid: 24e39c11112dfb5458f98c6b9041595b, type: 2}
       propertyPath: enemyLevel

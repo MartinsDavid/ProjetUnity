@@ -11,7 +11,7 @@ public class HealthBarScript : MonoBehaviour {
     private bool playedIsDead = false;
 
     //Player controller script
-    private NewPlayerController playerController;
+    private PlayerController playerController;
 
     // UI attributes
     public Texture2D HPBarTexture;
@@ -24,7 +24,7 @@ public class HealthBarScript : MonoBehaviour {
 	void Start()
 	{
 		animator = GetComponent<Animator>();
-        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<NewPlayerController>();
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
     }
 
