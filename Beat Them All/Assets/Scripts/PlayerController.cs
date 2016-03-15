@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
     public Transform playerFeet;
     public SpriteRenderer playerSprite;
     public Transform attackRayStart;
+    private WeaponScript weaponScript;
 
     //Animation Controls
     public Animator myAnimator;
@@ -26,11 +27,14 @@ public class PlayerController : MonoBehaviour {
     public bool isDead;
 
     private GameObject[] enemy;
-    private int count = 0;
-    private int salle = 0;
 
     public static float player;
 
+    void Awake()
+    {
+        //Find the weapon
+        weaponScript = GetComponentInChildren<WeaponScript>();
+    }
 
     void Start()
     {
@@ -40,8 +44,7 @@ public class PlayerController : MonoBehaviour {
 
     // Update is called once per frame
     void Update()
-     {
-    
+     {   
          playerSprite.sortingOrder = -(int)playerFeet.position.y;
 
         //-----------------------
@@ -106,8 +109,7 @@ public class PlayerController : MonoBehaviour {
 
         //As long as we are not attacking and we are not dead, we can move.
         if (!isAttacking && !isDead)
-         {
-            
+         {         
              //Grab our movement axis
              playerAxisMove = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
@@ -154,8 +156,15 @@ public class PlayerController : MonoBehaviour {
              isAttacking = true;
              myAnimator.SetTrigger("attack");
          }
-
-     }
+        if (Input.GetButtonDown("Fire2") && !isJumping && !isAttacking)
+        {
+            if (weaponScript != null && weaponScript.CanAttack)
+            {
+                isAttacking = true;
+                myAnimator.SetTrigger("attack2");
+            }
+        }
+    }
      
     //This is activated via an event in the Player_Jump animation
     void JumpCompleted()
@@ -204,10 +213,16 @@ public class PlayerController : MonoBehaviour {
             {
                 if (hit.collider.gameObject.tag == "Enemy")
                     //Call the enemy script, and tell it that we hit them !
-                    hit.collider.GetComponent<EnemyController>().HitEnemy();
+                    hit.collider.GetComponent<EnemyController>().HitEnemy("Punch");
                 else
-                    hit.collider.GetComponent<BossController>().HitEnemy();
+                    hit.collider.GetComponent<BossController>().HitEnemy("Punch");
             }
         }
     }
+
+    void WeaponScriptAttack()
+    {
+        weaponScript.Attack(false);
+    }
+
 }

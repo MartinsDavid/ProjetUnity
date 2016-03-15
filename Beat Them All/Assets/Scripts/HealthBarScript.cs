@@ -8,7 +8,7 @@ public class HealthBarScript : MonoBehaviour {
     public float curHP;
     public float maxHP;
     private Animator animator;
-    private bool playedIsDead = false;
+    private bool playerIsDead = false;
 
     //Player controller script
     private PlayerController playerController;
@@ -41,7 +41,7 @@ public class HealthBarScript : MonoBehaviour {
 		PercentOfHP = curHP / maxHP;
 		HPBarLenght = PercentOfHP * 400;
 		
-		if (curHP <= 0 && !playedIsDead)
+		if (curHP <= 0 && !playerIsDead)
 		{
 			PlayerDies();
 		}
@@ -52,7 +52,7 @@ public class HealthBarScript : MonoBehaviour {
 	{
 		AudioSource.PlayClipAtPoint (deathSound, transform.position);
 
-        playedIsDead = true;
+        playerIsDead = true;
         animator.SetTrigger("death");
 
         GameObject go = new GameObject("ClickToContinue");
@@ -63,24 +63,28 @@ public class HealthBarScript : MonoBehaviour {
     }
 
     //When the boss hit the player
-    public void Hit(string attackName, int damage)
+    public void HitPlayer(string attackName)
     {
         playerController.isAttacking = true;
-        curHP -= damage;
         switch (attackName)
         {
             case "Kick":
-                animator.SetTrigger("gotHit");
+                curHP -= 1;
+                break;
+            case "Laser":
+                curHP -= 1;
                 break;
             case "Sphere":
-                animator.SetTrigger("gotHit");
+                curHP -= 2;
                 break;
             case "AttackExe":
-                animator.SetTrigger("gotHit");
+                curHP -= 4;
                 break;
         }
-
-
+        if (curHP > 0)
+            animator.SetTrigger("gotHit");
+        else
+            PlayerDies();
     }
 
 }

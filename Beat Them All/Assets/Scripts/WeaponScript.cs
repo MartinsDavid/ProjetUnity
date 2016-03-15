@@ -34,6 +34,7 @@ public class WeaponScript : MonoBehaviour
         }
     }
 
+    
     //--------------------------------
     // 3 - Shooting from another script
     //--------------------------------
@@ -55,7 +56,7 @@ public class WeaponScript : MonoBehaviour
             shotTransform.position = transform.position;
 
             // The is enemy property
-            ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
+            ShotScriptSphere shot = shotTransform.gameObject.GetComponent<ShotScriptSphere>();
             if (shot != null)
             {
                 shot.isEnemyShot = isEnemy;

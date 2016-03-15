@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 425538}
-  - 114: {fileID: 11454752}
+  - 114: {fileID: 11457566}
   - 114: {fileID: 11466488}
   - 212: {fileID: 21233872}
   - 50: {fileID: 5034574}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.626453, y: -8.258389, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,10 +40,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122162}
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -63,7 +63,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.14, y: 0.04}
---- !u!114 &11454752
+--- !u!114 &11457566
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -71,13 +71,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 122162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10e136bc05027834eb0d7426cedaf799, type: 3}
+  m_Script: {fileID: 11500000, guid: c18857bcfc3078745ada8bdc444c1579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerTouchedSound1: {fileID: 8300000, guid: 41655380434e40e46acfaf457a9fcabf, type: 3}
   playerTouchedSound2: {fileID: 8300000, guid: 381d24503cd528a4396c325a342036cc, type: 3}
   playerTouchedSound3: {fileID: 8300000, guid: 62990dfb0e91d6f47a87cd1bf1691c52, type: 3}
-  damage: 1
   isEnemyShot: 1
 --- !u!114 &11466488
 MonoBehaviour:
@@ -90,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b39418a5c6117a5458d1b6c3ecf02569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: {x: 8, y: 8}
   direction: {x: -1, y: 0}
 --- !u!212 &21233872
 SpriteRenderer:
@@ -159,6 +159,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: enemyTouchedSound1
+      value: 
+      objectReference: {fileID: 8300000, guid: adbb610c1cc4b404b95db9305e639cb2, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

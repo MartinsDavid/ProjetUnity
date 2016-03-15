@@ -21,13 +21,13 @@ public class HeartScript : MonoBehaviour {
 	{
 		if (target.gameObject.tag == "Player")
 		{
-			if(health.curHP > health.maxHP-10)
+			if(health.curHP > health.maxHP-5)
 			{
 				health.curHP = health.maxHP;
 			}
 			else
 			{
-				health.curHP += 10;
+				health.curHP += 5;
 			}
 
 			AudioSource.PlayClipAtPoint (lifeSound, transform.position);

@@ -68,8 +68,6 @@ public class BossController : MonoBehaviour
     // ----------------
 
 
-
-
     void Awake()
     {
         // Retrieve the weapon only once
@@ -103,32 +101,36 @@ public class BossController : MonoBehaviour
         // Check the player hp
         if (playerHP.curHP <= 0)
         {
+            inFight = true;
             bossAnimator.SetBool("bossWin", true);
         }
-        //Set the enemy sprite order equal to our enemy's feet Y position
-        enemySprite.sortingOrder = -(int)enemyFeet.position.y;
+        if (!isDead)
+        {
+            //Set the enemy sprite order equal to our enemy's feet Y position
+            enemySprite.sortingOrder = -(int)enemyFeet.position.y;
 
-        if (transform.position.x < playerBody.position.x)
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-        }
-        else if (transform.position.x > playerBody.position.x)
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-        }
+            if (transform.position.x < playerBody.position.x)
+            {
+                transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            }
+            else if (transform.position.x > playerBody.position.x)
+            {
+                transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            }
 
-        //Decrease cooldowns
-        if (coolDownKick >= 0)
-        {
-            coolDownKick -= Time.deltaTime;
-        }
-        if (coolDownSphere >= 0)
-        {
-            coolDownSphere -= Time.deltaTime;
-        }
-        if (coolDownExe >= 0)
-        {
-            coolDownExe -= Time.deltaTime;
+            //Decrease cooldowns
+            if (coolDownKick >= 0)
+            {
+                coolDownKick -= Time.deltaTime;
+            }
+            if (coolDownSphere >= 0)
+            {
+                coolDownSphere -= Time.deltaTime;
+            }
+            if (coolDownExe >= 0)
+            {
+                coolDownExe -= Time.deltaTime;
+            }
         }
     }
 
@@ -166,7 +168,6 @@ public class BossController : MonoBehaviour
 
     private void PatternOneDetails(float distance, Transform attackPoint)
     {
-
         if (CanKick)
         {
             inFight = true;
@@ -176,7 +177,7 @@ public class BossController : MonoBehaviour
         {
             inFight = true;
             coolDownSphere += sphereRate;
-            if (enemyWeapon.position.y < playerBody.position.y + 1f && enemyWeapon.position.y > playerBody.position.y - 1f)
+            if (enemyWeapon.position.y < playerBody.position.y + 0.7f && enemyWeapon.position.y > playerBody.position.y - 0.7f)
             {
                 if (weaponScript != null && weaponScript.CanAttack)
                 {
@@ -261,7 +262,7 @@ public class BossController : MonoBehaviour
     {
         if(onExeMode)
             if(target.gameObject.tag == "Player")
-                target.GetComponent<HealthBarScript>().Hit("AttackExe", 7);
+                target.GetComponent<HealthBarScript>().HitPlayer("AttackExe");
         onExeMode = false;
     }
 
@@ -273,18 +274,24 @@ public class BossController : MonoBehaviour
     }
 
     //When our player hit the boss
-    public void HitEnemy()
+    public void HitEnemy(string attackName)
     {
-        healthPoint -= 3;
         inFight = true;
-        if (healthPoint <= 0)
+        switch(attackName)
+        {
+            case ("Punch"):
+                healthPoint -= 2;
+                break;
+            case ("CrescentMoon"):
+                healthPoint -= 4;
+                break;
+        }
+        if (healthPoint > 0)
+            bossAnimator.SetTrigger("gotHit");
+        else
         {
             isDead = true;
             bossAnimator.SetTrigger("death");
-        }
-        else
-        {          
-            bossAnimator.SetTrigger("gotHit");
         }
 
         //Check the Boss's hp to change the pattern if the boss is "midLife"
@@ -324,7 +331,7 @@ public class BossController : MonoBehaviour
             if (yDifference < 0.85f && yDifference > -0.85f)
             {
                 //Call the HealthBarScript script, and tell it that we hit the player ! 
-                hit.collider.GetComponent<HealthBarScript>().Hit("Kick", 1);
+                hit.collider.GetComponent<HealthBarScript>().HitPlayer("Kick");
             }
         }
     }

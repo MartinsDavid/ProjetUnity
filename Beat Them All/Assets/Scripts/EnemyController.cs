@@ -35,14 +35,12 @@ public class EnemyController : MonoBehaviour
 
     void Awake()
     {
-
         // Retrieve the weapon only once
         weaponScript = GetComponentInChildren<WeaponScript>();
     }
 
     void Start()
     {
-
         //Find the player
         playerBody = GameObject.Find("PlayerController").transform;
         //Find attackPoints 1 and 2
@@ -57,7 +55,6 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-
         //Set the enemy sprite order equal to our enemy's feet Y position
         enemySprite.sortingOrder = -(int)enemyFeet.position.y;
 
@@ -70,7 +67,7 @@ public class EnemyController : MonoBehaviour
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
 
-        if (!inFight)
+        if (!inFight || !isDead)
         {
             inFight = true;
             // Auto-fire
@@ -124,28 +121,30 @@ public class EnemyController : MonoBehaviour
     //Move towards the given attack point
     void MoveInDirection(Transform tempTrans)
     {
-
         transform.position += (tempTrans.position - transform.position).normalized * moveSpeed * Time.deltaTime;
-
         enemyAnimator.SetInteger("animState", 1);
     }
 
     //When our player hit the enemy
-    public void HitEnemy()
+    public void HitEnemy(string attackName)
     {
-        healthPoint -= 2;
-        
-        if (healthPoint <= 0)
+        inFight = true;
+        switch (attackName)
         {
-			AudioSource.PlayClipAtPoint (destructedDroidSound, transform.position);
-            isDead = true;
-            enemyAnimator.SetTrigger("death");
-            enemySpawner.SendMessage("killEnemy", spawnID);
+            case ("Punch"):
+                healthPoint -= 2;
+                break;
+            case ("CrescentMoon"):
+                healthPoint -= 6;
+                break;
         }
+        if (healthPoint > 0)
+            enemyAnimator.SetTrigger("gotHit");
         else
         {
-            inFight = true;
-            enemyAnimator.SetTrigger("gotHit");
+            AudioSource.PlayClipAtPoint(destructedDroidSound, transform.position);
+            isDead = true;
+            enemyAnimator.SetTrigger("death");
         }
     }
 

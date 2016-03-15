@@ -3,11 +3,10 @@ using System.Collections;
 
 public class MoveShotScript : MonoBehaviour
 {
-
     // 1 - Designer variables
 
     // Object speed
-    private Vector2 speed = new Vector2(8,8);
+    public Vector2 speed = new Vector2();
 
     // Moving direction
     public Vector2 direction = new Vector2(-1, 0);

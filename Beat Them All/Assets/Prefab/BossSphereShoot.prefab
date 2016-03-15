@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.831188, y: -9.57374, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 20, y: 22, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -44,7 +44,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b39418a5c6117a5458d1b6c3ecf02569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: {x: 8, y: 8}
   direction: {x: -1, y: 0}
 --- !u!114 &11496676
 MonoBehaviour:
@@ -107,7 +108,6 @@ MonoBehaviour:
   playerTouchedSound1: {fileID: 8300000, guid: 41655380434e40e46acfaf457a9fcabf, type: 3}
   playerTouchedSound2: {fileID: 8300000, guid: 381d24503cd528a4396c325a342036cc, type: 3}
   playerTouchedSound3: {fileID: 8300000, guid: 62990dfb0e91d6f47a87cd1bf1691c52, type: 3}
-  damage: 4
   isEnemyShot: 1
 --- !u!212 &21248372
 SpriteRenderer:
@@ -164,11 +164,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_GravityScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: damage
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: enemyTouchedSound1
+      value: 
+      objectReference: {fileID: 8300000, guid: adbb610c1cc4b404b95db9305e639cb2, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

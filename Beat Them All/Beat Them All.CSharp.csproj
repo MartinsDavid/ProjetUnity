@@ -101,7 +101,9 @@
     <Compile Include="Assets\Scripts\ProgressBar.cs" />
     <Compile Include="Assets\Scripts\RandomSprite.cs" />
     <Compile Include="Assets\Scripts\ScoreScript.cs" />
-    <Compile Include="Assets\Scripts\ShotScript.cs" />
+    <Compile Include="Assets\Scripts\ShotScriptCrescentMoon.cs" />
+    <Compile Include="Assets\Scripts\ShotScriptLaser.cs" />
+    <Compile Include="Assets\Scripts\ShotScriptSphere.cs" />
     <Compile Include="Assets\Scripts\SpawnerEnemy.cs" />
     <Compile Include="Assets\Scripts\StoryScript.cs" />
     <Compile Include="Assets\Scripts\Utils\SimpleJSON.cs" />
