@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
     //Audio
-	public AudioClip punchSound1;
-	public AudioClip punchSound2;
-	public AudioClip punchSound3;
-	public AudioClip jumpSound;
+    public AudioClip punchSound1;
+    public AudioClip punchSound2;
+    public AudioClip punchSound3;
+    public AudioClip jumpSound;
 
     //Player Controls
     public Transform playerBody;
@@ -44,8 +45,8 @@ public class PlayerController : MonoBehaviour {
 
     // Update is called once per frame
     void Update()
-     {   
-         playerSprite.sortingOrder = -(int)playerFeet.position.y;
+    {
+        playerSprite.sortingOrder = -(int)playerFeet.position.y;
 
         //-----------------------
         //Movement Section
@@ -109,53 +110,53 @@ public class PlayerController : MonoBehaviour {
 
         //As long as we are not attacking and we are not dead, we can move.
         if (!isAttacking && !isDead)
-         {         
-             //Grab our movement axis
-             playerAxisMove = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        {
+            //Grab our movement axis
+            playerAxisMove = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-             //Move our player around
-             transform.Translate(playerAxisMove * moveSpeed * Time.deltaTime);
+            //Move our player around
+            transform.Translate(playerAxisMove * moveSpeed * Time.deltaTime);
 
-             //Checks to see which way our player is going and flips their facing direction
-             if (playerAxisMove.x > 0)
-             {
-                 playerBody.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-             }
-             else if (playerAxisMove.x < 0)
-             {
-                 playerBody.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-             }
+            //Checks to see which way our player is going and flips their facing direction
+            if (playerAxisMove.x > 0)
+            {
+                playerBody.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            }
+            else if (playerAxisMove.x < 0)
+            {
+                playerBody.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            }
 
-             //Checks to see if our player is moving
-             //If they are, activate the "walking" variable
-             if (Mathf.Abs(playerAxisMove.x) > 0 || Mathf.Abs(playerAxisMove.y) > 0)
-             {
-                 myAnimator.SetBool("isWalking", true);
-             }
-             else
-             {
-                 myAnimator.SetBool("isWalking", false);
-             }
-         }
+            //Checks to see if our player is moving
+            //If they are, activate the "walking" variable
+            if (Mathf.Abs(playerAxisMove.x) > 0 || Mathf.Abs(playerAxisMove.y) > 0)
+            {
+                myAnimator.SetBool("isWalking", true);
+            }
+            else
+            {
+                myAnimator.SetBool("isWalking", false);
+            }
+        }
 
-         //-----------------------
-         //Button Detect Section
-         //-----------------------
+        //-----------------------
+        //Button Detect Section
+        //-----------------------
 
-         //Did we jump?
-         if (Input.GetButtonDown("Jump") && !isJumping && !isAttacking)
-         {
-             isJumping = true;
-             myAnimator.SetTrigger("jumped");
-             AudioSource.PlayClipAtPoint (jumpSound, transform.position);
-         }
+        //Did we jump?
+        if (Input.GetButtonDown("Jump") && !isJumping && !isAttacking)
+        {
+            isJumping = true;
+            myAnimator.SetTrigger("jumped");
+            AudioSource.PlayClipAtPoint(jumpSound, transform.position);
+        }
 
-         //Did we attack?
-         if (Input.GetButtonDown("Fire1") && !isJumping && !isAttacking)
-         {
-             isAttacking = true;
-             myAnimator.SetTrigger("attack");
-         }
+        //Did we attack?
+        if (Input.GetButtonDown("Fire1") && !isJumping && !isAttacking)
+        {
+            isAttacking = true;
+            myAnimator.SetTrigger("attack");
+        }
         if (Input.GetButtonDown("Fire2") && !isJumping && !isAttacking)
         {
             if (weaponScript != null && weaponScript.CanAttack)
@@ -165,7 +166,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
     }
-     
+
     //This is activated via an event in the Player_Jump animation
     void JumpCompleted()
     {
@@ -186,18 +187,19 @@ public class PlayerController : MonoBehaviour {
     //This is activatd via an event in the Player_Attack animation
     void Attacking()
     {
-		switch (Random.Range(0,3) % 3) {
-		case 0:
-			AudioSource.PlayClipAtPoint (punchSound1, transform.position);
-			break;
-		case 1 :
-			AudioSource.PlayClipAtPoint (punchSound2, transform.position);
-			break;
-		case 2 :
-			AudioSource.PlayClipAtPoint (punchSound3, transform.position);
-			break;
-		}
-	
+        switch (Random.Range(0, 3) % 3)
+        {
+            case 0:
+                AudioSource.PlayClipAtPoint(punchSound1, transform.position);
+                break;
+            case 1:
+                AudioSource.PlayClipAtPoint(punchSound2, transform.position);
+                break;
+            case 2:
+                AudioSource.PlayClipAtPoint(punchSound3, transform.position);
+                break;
+        }
+
         //Shot a ray out in the "right" direction.
         //As we are rotating our player-body, we multiply Vector2.right by the rotation in order to get the correct "right" direction
         RaycastHit2D hit = Physics2D.Raycast(attackRayStart.position, playerBody.rotation * Vector2.right, 2);

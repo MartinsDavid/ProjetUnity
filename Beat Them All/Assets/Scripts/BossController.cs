@@ -224,7 +224,6 @@ public class BossController : MonoBehaviour
         {
             inFight = true;
             bossAnimator.SetTrigger("kick");
-            Attacking();
         }
         else if (CanShootSphere)
         {
@@ -280,7 +279,7 @@ public class BossController : MonoBehaviour
         switch(attackName)
         {
             case ("Punch"):
-                healthPoint -= 2;
+                healthPoint -= 1;
                 break;
             case ("CrescentMoon"):
                 healthPoint -= 4;
@@ -303,12 +302,6 @@ public class BossController : MonoBehaviour
     public void StopFight()
     {
         inFight = false;
-    }
-
-    //When our player kill the enemy.  Call when the Dead animation is done
-    public void DestroyEnemy()
-    {
-        Destroy(gameObject);
     }
 
     //This is activatd via an event in the Boss_kick animation

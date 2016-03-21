@@ -132,10 +132,10 @@ public class EnemyController : MonoBehaviour
         switch (attackName)
         {
             case ("Punch"):
-                healthPoint -= 2;
+                healthPoint -= 1;
                 break;
             case ("CrescentMoon"):
-                healthPoint -= 6;
+                healthPoint -= 4;
                 break;
         }
         if (healthPoint > 0)

@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -37.315704, y: -9.353823, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTouchedSound1: {fileID: 8300000, guid: adbb610c1cc4b404b95db9305e639cb2, type: 3}
+  shot: {fileID: 423832}
   isEnemyShot: 0
 --- !u!212 &21219730
 SpriteRenderer:

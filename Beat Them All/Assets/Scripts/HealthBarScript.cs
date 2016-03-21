@@ -69,13 +69,13 @@ public class HealthBarScript : MonoBehaviour {
         switch (attackName)
         {
             case "Kick":
-                curHP -= 1;
+                curHP -= 2;
                 break;
             case "Laser":
                 curHP -= 1;
                 break;
             case "Sphere":
-                curHP -= 2;
+                curHP -= 4;
                 break;
             case "AttackExe":
                 curHP -= 4;

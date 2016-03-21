@@ -103,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.71, y: -8.13, z: 0}
+  m_LocalPosition: {x: -12.285095, y: -8.102678, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 422000}
@@ -130,7 +130,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.68, y: -2.5, z: 0}
+  m_LocalPosition: {x: 0.42, y: -2.33, z: 0}
   m_LocalScale: {x: 25, y: 32, z: 1}
   m_Children: []
   m_Father: {fileID: 442910}
@@ -216,9 +216,9 @@ MonoBehaviour:
   enemyFeet: {fileID: 452120}
   enemySprite: {fileID: 21245010}
   bossAnimator: {fileID: 9520608}
-  coolDownKick: 3
+  coolDownKick: 2
   coolDownSphere: 5
-  coolDownExe: 10
+  coolDownExe: 15
   attackRayStart: {fileID: 477302}
   enemyWeapon: {fileID: 445670}
   enemySpawner: {fileID: 493142, guid: 24e39c11112dfb5458f98c6b9041595b, type: 2}
@@ -291,7 +291,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300128, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -321,7 +321,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300016, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -336,6 +336,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Mass
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: coolDownExe
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: coolDownKick
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
