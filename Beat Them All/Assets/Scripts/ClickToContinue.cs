@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class ClickToContinue : MonoBehaviour {
@@ -21,6 +20,6 @@ public class ClickToContinue : MonoBehaviour {
 	
 	void LoadScene(){
 		loadLock = true;
-        SceneManager.LoadScene(scene);
+		Application.LoadLevel (scene);
 	}
 }

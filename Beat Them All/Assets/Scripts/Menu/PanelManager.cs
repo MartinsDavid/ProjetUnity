@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
@@ -107,12 +106,12 @@ public class PanelManager : MonoBehaviour {
 	public void PlayGame()
 	{
 		AudioSource.PlayClipAtPoint (playGameSound, transform.position);
-        SceneManager.LoadScene(playGameScene);
+		Application.LoadLevel (playGameScene);
     }
 
     public void Credits()
 	{
-        SceneManager.LoadScene(playGameScene);
+		Application.LoadLevel (creditsScene);
     }
 
     public void PlaySound(AudioClip sound)

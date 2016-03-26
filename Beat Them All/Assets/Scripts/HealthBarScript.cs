@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class HealthBarScript : MonoBehaviour {
@@ -57,7 +56,7 @@ public class HealthBarScript : MonoBehaviour {
 
         GameObject go = new GameObject("ClickToContinue");
         ClickToContinue script = go.AddComponent<ClickToContinue>();
-        script.scene = SceneManager.GetActiveScene().name; ;
+		script.scene = Application.loadedLevelName;
         go.AddComponent<DisplayRestartText>();
 
     }

@@ -6,7 +6,7 @@
 	["game.quit", "quitter"]
 	
 	["game.language", "langage"]	
-	["game.video", "audio/video"]
+	["game.video", "video"]
 	["game.audio", "audio"]
 	["game.back", "retour"]
 	

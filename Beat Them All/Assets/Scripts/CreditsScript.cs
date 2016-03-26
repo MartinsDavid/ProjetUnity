@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class CreditsScript : MonoBehaviour {
@@ -20,7 +19,7 @@ public class CreditsScript : MonoBehaviour {
 	void Update () {
 
 		if (Input.GetKey ("escape"))
-            SceneManager.LoadScene(level);
+			Application.LoadLevel (level);
 
         credits.transform.Translate (Vector3.up * Time.deltaTime * speed);
 	}
@@ -28,7 +27,7 @@ public class CreditsScript : MonoBehaviour {
 	IEnumerator waitFor()
 	{
 		yield return new WaitForSeconds (5);
-        SceneManager.LoadScene(level);
+		Application.LoadLevel (level);
     }
 
 }

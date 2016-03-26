@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
@@ -53,7 +52,7 @@ public class MenuScript : MonoBehaviour {
 	public void LoadScene()
 	{
 		AudioSource.PlayClipAtPoint (playGameSound, transform.position);
-        SceneManager.LoadScene(scene);
+		Application.LoadLevel (scene);
 	}
 
 	public void ExitPress()

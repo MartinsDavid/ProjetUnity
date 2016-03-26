@@ -323,7 +323,7 @@ MonoBehaviour:
   story: {fileID: 2121908543}
   title: {fileID: 821599157}
   speed: 150
-  level: 4c6f616453637265656e
+  level: LoadScreen
 --- !u!82 &1229971733
 AudioSource:
   m_ObjectHideFlags: 0
