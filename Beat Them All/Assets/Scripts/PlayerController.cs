@@ -216,8 +216,10 @@ public class PlayerController : MonoBehaviour
                 if (hit.collider.gameObject.tag == "Enemy")
                     //Call the enemy script, and tell it that we hit them !
                     hit.collider.GetComponent<EnemyController>().HitEnemy("Punch");
-                else
+                else if (hit.collider.gameObject.tag == "Boss")
                     hit.collider.GetComponent<BossController>().HitEnemy("Punch");
+                else
+                    hit.collider.GetComponent<BoxScript>().HitBox();
             }
         }
     }

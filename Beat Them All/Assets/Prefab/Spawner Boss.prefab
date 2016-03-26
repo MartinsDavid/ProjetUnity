@@ -1,42 +1,42 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &115644
+--- !u!1 &134200
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 493142}
-  - 114: {fileID: 11429274}
-  - 58: {fileID: 5857302}
-  - 50: {fileID: 5006414}
+  - 4: {fileID: 457352}
+  - 114: {fileID: 11470376}
+  - 58: {fileID: 5880984}
+  - 50: {fileID: 5067552}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: Spawner Boss
   m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &493142
+--- !u!4 &457352
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115644}
+  m_GameObject: {fileID: 134200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 175.8, y: -16.44869, z: 0}
+  m_LocalPosition: {x: 291.5, y: -8.731495, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5006414
+--- !u!50 &5067552
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115644}
+  m_GameObject: {fileID: 134200}
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -47,12 +47,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &5857302
+--- !u!58 &5880984
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115644}
+  m_GameObject: {fileID: 134200}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -60,19 +60,19 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 15
---- !u!114 &11429274
+  m_Radius: 35
+--- !u!114 &11470376
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115644}
+  m_GameObject: {fileID: 134200}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73cd60b564b7469488a550cb728d5443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyLevel: 0
+  enemyLevel: 1
   BossEnemy: {fileID: 124986, guid: 7feb4760a4f37f34abe7f48ee7526656, type: 2}
   DistanceEnemy: {fileID: 122672, guid: ee092173213b2584ea88cb1ad1639c3e, type: 2}
   totalEnemy: 1
@@ -89,28 +89,8 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: spawnType
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: waveTimer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Radius
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: BossEnemy
-      value: 
-      objectReference: {fileID: 124986, guid: 7feb4760a4f37f34abe7f48ee7526656, type: 2}
+    m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 115644}
+  m_RootGameObject: {fileID: 134200}
   m_IsPrefabParent: 1
