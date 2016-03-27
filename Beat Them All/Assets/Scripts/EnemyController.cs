@@ -26,11 +26,16 @@ public class EnemyController : MonoBehaviour
     public Transform enemyWeapon;
     private WeaponScript weaponScript;
 
+    //Cristal Prefab 
+    public Transform cristalPrefab;
+
+    private int nbCristal;
+
     // Spawner ID
     int spawnID;
     public Transform enemySpawner;
-
-	public AudioClip destructedDroidSound;
+    // Sound 
+    public AudioClip destructedDroidSound;
 
 
     void Awake()
@@ -165,6 +170,12 @@ public class EnemyController : MonoBehaviour
         spawnID = sID;
     }
 
-
+    public void DropCristal()
+    {
+            //Create a new hearth
+            var cristal = Instantiate(cristalPrefab) as Transform;
+            //Assign position
+            cristal.position = transform.position;
+    }
 }
 
