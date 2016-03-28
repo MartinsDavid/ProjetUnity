@@ -16,39 +16,21 @@ public class LanguageMenu : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-		textMenu = GameObject.Find ("TextMenu");
-		textMenu.GetComponent<Text> ().text = Lang.Get("game.menu");
-		
+		textMenu = GameObject.Find ("TextMenu");	
 		textPlayGame = GameObject.Find ("TextPlayGame");
-		textPlayGame.GetComponent<Text> ().text = Lang.Get("game.playGame");
-
 		textSettings = GameObject.Find ("TextSettings");
-		textSettings.GetComponent<Text> ().text = Lang.Get("game.settings");
-
 		textCredits = GameObject.Find ("TextCredits");
-		textCredits.GetComponent<Text> ().text = Lang.Get("game.credits");
-
 		textQuit = GameObject.Find ("TextQuit");
-		textQuit.GetComponent<Text> ().text = Lang.Get("game.quit");
-
-		/*
-		textLanguage = GameObject.Find ("TextLanguage");
-		textLanguage.GetComponent<Text> ().text = Lang.Get("game.language");
-
-
-		textBack = GameObject.Find ("TextBack");
-		textBack.GetComponent<Text> ().text = Lang.Get("game.back");
-*/
-
-
-	
-
-
+		LoadText ();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-
+	public void LoadText()
+	{
+		textMenu.GetComponent<Text> ().text = Lang.Get("game.menu");
+		textPlayGame.GetComponent<Text> ().text = Lang.Get("game.playGame");
+		textSettings.GetComponent<Text> ().text = Lang.Get("game.settings");
+		textCredits.GetComponent<Text> ().text = Lang.Get("game.credits");
+		textQuit.GetComponent<Text> ().text = Lang.Get("game.quit");
 	}
 
 

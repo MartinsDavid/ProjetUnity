@@ -5,29 +5,16 @@ using SimpleJSON;
 public class Lang : Singleton<Lang>
 {
 	private Dictionary<string, string> _gameTexts;
+	public string language;
+	string jsonString;
 	
 	// Initialisation du gestionnaire de langues
-	void Awake()
+	public void Awake()
 	{
-		string lang = Application.systemLanguage.ToString();
-		string jsonString = string.Empty;
-		
-		if (lang == "French")
-			jsonString = Resources.Load<TextAsset>("lang.fr").text;
-		else
-			jsonString = Resources.Load<TextAsset>("lang.en").text;
-		
-		JSONNode json = JSON.Parse(jsonString);
-		int size = json.Count;
-		
-		_gameTexts = new Dictionary<string, string>(size);
-		
-		JSONArray array;
-		for (int i = 0; i < size; i++)
-		{
-			array = json[i].AsArray;
-			_gameTexts.Add(array[0].Value, array[1].Value);
-		}
+		language = Application.systemLanguage.ToString();
+		jsonString = string.Empty;
+
+		LoadLanguage (language);
 	}
 	
 	// Alias court à Lang.Instance.Get(key)
@@ -43,5 +30,24 @@ public class Lang : Singleton<Lang>
 			return _gameTexts[key];
 		
 		return key;
+	}
+
+	public void LoadLanguage(string lang)
+	{
+		if (lang == "French")
+			jsonString = Resources.Load<TextAsset> ("lang.fr").text;
+		else
+			jsonString = Resources.Load<TextAsset> ("lang.en").text;
+	
+		JSONNode json = JSON.Parse (jsonString);
+		int size = json.Count;
+	
+		_gameTexts = new Dictionary<string, string> (size);
+	
+		JSONArray array;
+		for (int i = 0; i < size; i++) {
+			array = json [i].AsArray;
+			_gameTexts.Add (array [0].Value, array [1].Value);
+		}
 	}
 }

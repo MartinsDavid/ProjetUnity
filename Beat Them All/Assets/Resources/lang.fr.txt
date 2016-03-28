@@ -10,7 +10,6 @@
 	["game.audio", "audio"]
 	["game.back", "retour"]
 	
-	
 	["game.fullScreen", "plein ecran"]
 	["game.qualityGraphics", "graphismes"]
 	["game.antiAliasing", "anti-aliasing"]

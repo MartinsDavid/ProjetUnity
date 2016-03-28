@@ -13,15 +13,16 @@ public class LanguageAudio : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 		titleAudio = GameObject.Find ("TitleAudio");
-		titleAudio.GetComponent<Text> ().text = Lang.Get("game.audio");
-
 		textVolume = GameObject.Find ("TextVolume");
-		textVolume.GetComponent<Text> ().text = Lang.Get("game.volume");
-		
 		textBackAudio = GameObject.Find ("TextBackAudio");
+		LoadText ();	
+	}
+
+	public void LoadText()
+	{
+		titleAudio.GetComponent<Text> ().text = Lang.Get("game.audio");
+		textVolume.GetComponent<Text> ().text = Lang.Get("game.volume");
 		textBackAudio.GetComponent<Text> ().text = Lang.Get("game.back");
-	
 	}
 }

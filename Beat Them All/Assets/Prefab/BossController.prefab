@@ -90,7 +90,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.19, y: 0, z: 0}
+  m_LocalPosition: {x: .189999998, y: 0, z: 0}
   m_LocalScale: {x: 22, y: 32, z: 1}
   m_Children:
   - {fileID: 477302}
@@ -103,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.285095, y: -8.102678, z: 0}
+  m_LocalPosition: {x: -12.2850952, y: -8.1026783, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 422000}
@@ -118,8 +118,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 0.8, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 2.5, y: .800000012, z: 0}
+  m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
   m_Children: []
   m_Father: {fileID: 442910}
   m_RootOrder: 2
@@ -130,7 +130,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.42, y: -2.33, z: 0}
+  m_LocalPosition: {x: .419999987, y: -2.32999992, z: 0}
   m_LocalScale: {x: 25, y: 32, z: 1}
   m_Children: []
   m_Father: {fileID: 442910}
@@ -142,7 +142,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.123, y: 0.031, z: 0}
+  m_LocalPosition: {x: .123000003, y: .0309999995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 422000}
@@ -154,10 +154,9 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124986}
-  m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: .0500000007
   m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -171,13 +170,12 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124986}
   m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0.2, y: 0.8}
+  m_Offset: {x: .200000003, y: .800000012}
   serializedVersion: 2
-  m_Radius: 1.4
+  m_Radius: 1.39999998
 --- !u!95 &9520608
 Animator:
   serializedVersion: 3
@@ -219,6 +217,12 @@ MonoBehaviour:
   coolDownKick: 2
   coolDownSphere: 5
   coolDownExe: 15
+  touchedSound: {fileID: 8300000, guid: 4a62dd6662bd4ad4682824f8eea4452c, type: 3}
+  deathSound: {fileID: 8300000, guid: 014a588222823674eafc32fc6d762e0a, type: 3}
+  specialAttackSound1: {fileID: 8300000, guid: 9dadc28235086cd41a306e5414e56fc9, type: 3}
+  hitSound: {fileID: 8300000, guid: a842efe0ad4747543bd45c6a1a99995f, type: 3}
+  bossMusic: {fileID: 8300000, guid: c1306c867eaef8041b44de2c912fe7a9, type: 3}
+  level: Credits
   attackRayStart: {fileID: 477302}
   enemyWeapon: {fileID: 445670}
   enemySpawner: {fileID: 493142, guid: 24e39c11112dfb5458f98c6b9041595b, type: 2}
@@ -254,18 +258,14 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
 --- !u!212 &21245010
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -284,18 +284,14 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300128, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
 --- !u!212 &21292574
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -314,18 +310,14 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300016, guid: a4ee1cbdf144c3b47a3caf5bc887bf7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -345,6 +337,30 @@ Prefab:
       propertyPath: coolDownKick
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: touchedSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a62dd6662bd4ad4682824f8eea4452c, type: 3}
+    - target: {fileID: 0}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 014a588222823674eafc32fc6d762e0a, type: 3}
+    - target: {fileID: 0}
+      propertyPath: specialAttackSound1
+      value: 
+      objectReference: {fileID: 8300000, guid: 9dadc28235086cd41a306e5414e56fc9, type: 3}
+    - target: {fileID: 0}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a842efe0ad4747543bd45c6a1a99995f, type: 3}
+    - target: {fileID: 0}
+      propertyPath: musicBoss
+      value: 
+      objectReference: {fileID: 8300000, guid: bb6d6e662fafdba4e9f7a0a351100808, type: 3}
+    - target: {fileID: 0}
+      propertyPath: bossMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: c1306c867eaef8041b44de2c912fe7a9, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 124986}

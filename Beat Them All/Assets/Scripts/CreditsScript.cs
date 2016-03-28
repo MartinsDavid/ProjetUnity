@@ -13,6 +13,8 @@ public class CreditsScript : MonoBehaviour {
 	void Start () {
 		spriteCredits = Resources.Load<Sprite> (Lang.Get("game.textCredits"));
 		credits.GetComponent<SpriteRenderer> ().sprite = spriteCredits;
+
+		StartCoroutine(waitFor());
 	}
 	
 	// Update is called once per frame
@@ -26,7 +28,7 @@ public class CreditsScript : MonoBehaviour {
 	
 	IEnumerator waitFor()
 	{
-		yield return new WaitForSeconds (5);
+		yield return new WaitForSeconds (10);
 		Application.LoadLevel (level);
     }
 

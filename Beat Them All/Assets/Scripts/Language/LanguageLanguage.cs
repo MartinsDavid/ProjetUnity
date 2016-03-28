@@ -10,17 +10,16 @@ public class LanguageLanguage : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
-		titleLanguage = GameObject.Find ("TitleLanguage");
-		titleLanguage.GetComponent<Text> ().text = Lang.Get("game.language");
-		
+		titleLanguage = GameObject.Find ("TitleLanguage");	
 		textBackLanguage = GameObject.Find ("TextBackLanguage");
-		textBackLanguage.GetComponent<Text> ().text = Lang.Get("game.back");
+		LoadText ();
+	}
 
+
+	public void LoadText()
+	{
+		titleLanguage.GetComponent<Text> ().text = Lang.Get("game.language");
+		textBackLanguage.GetComponent<Text> ().text = Lang.Get("game.back");
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

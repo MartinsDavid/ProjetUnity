@@ -36,6 +36,19 @@ public class BossController : MonoBehaviour
     public float coolDownExe;
     private float exeRate;
 
+	//Sounds
+	public AudioClip touchedSound;
+	public AudioClip deathSound;
+	public AudioClip specialAttackSound1;
+	public AudioClip hitSound;
+	AudioSource levelMusic;
+	public AudioClip bossMusic;
+
+	//Level after boss is dead
+	public string level = "Credits";
+
+
+
     private bool CanKick
     {
         get{ return coolDownKick <= 0f; }
@@ -72,6 +85,16 @@ public class BossController : MonoBehaviour
     {
         // Retrieve the weapon only once
         weaponScript = GetComponentInChildren<WeaponScript>();
+	
+		levelMusic = GameObject.Find ("LevelMusic").GetComponent<AudioSource> ();
+		levelMusic.clip = bossMusic;
+		levelMusic.Play ();
+		levelMusic.loop = true;
+
+
+		//levelMusic.GetComponent<AudioClip> = bossMusic;
+		//levelMusic = bossMusic;
+
     }
 
     // Use this for initialization
@@ -252,6 +275,7 @@ public class BossController : MonoBehaviour
     // AttackExe Launch when the Boss_SpecialAttack animation start
     public void AttackExe()
     {
+		AudioSource.PlayClipAtPoint (specialAttackSound1, transform.position);
         onExeMode = true;
         transform.position += (playerBody.position - transform.position).normalized * moveSpeed * Time.deltaTime * 10f;
     }
@@ -285,12 +309,19 @@ public class BossController : MonoBehaviour
                 healthPoint -= 4;
                 break;
         }
-        if (healthPoint > 0)
-            bossAnimator.SetTrigger("gotHit");
+        if (healthPoint > 0) {
+			bossAnimator.SetTrigger ("gotHit");
+			AudioSource.PlayClipAtPoint(touchedSound, transform.position);
+		}
+
         else
         {
+			if (!isDead)
+				AudioSource.PlayClipAtPoint(deathSound, transform.position);
             isDead = true;
             bossAnimator.SetTrigger("death");
+			StartCoroutine(waitFor());
+
         }
 
         //Check the Boss's hp to change the pattern if the boss is "midLife"
@@ -304,9 +335,11 @@ public class BossController : MonoBehaviour
         inFight = false;
     }
 
-    //This is activatd via an event in the Boss_kick animation
+    //This is activated via an event in the Boss_kick animation
     private void Attacking()
     {
+		AudioSource.PlayClipAtPoint (hitSound, transform.position);
+
         inFight = true;
         coolDownKick += kickRate;
 
@@ -328,4 +361,10 @@ public class BossController : MonoBehaviour
             }
         }
     }
+
+	IEnumerator waitFor()
+	{
+		yield return new WaitForSeconds (5);
+		Application.LoadLevel (level);
+	}
 }

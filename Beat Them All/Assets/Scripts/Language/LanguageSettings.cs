@@ -14,26 +14,26 @@ public class LanguageSettings : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Debug.Log ("START LANGUAGESETTINGS");
+
 
 		titleSettings = GameObject.Find ("TitleSettings");
-		titleSettings.GetComponent<Text> ().text = Lang.Get("game.settings");
-
 		textLanguage = GameObject.Find ("TextLanguage");
-		textLanguage.GetComponent<Text> ().text = Lang.Get("game.language");
-
 		textVideo = GameObject.Find ("TextVideo");
-		textVideo.GetComponent<Text> ().text = Lang.Get("game.video");
-
 		textAudio = GameObject.Find ("TextAudio");
-		textAudio.GetComponent<Text> ().text = Lang.Get("game.audio");
-
 		textBackSettings = GameObject.Find ("TextBackSettings");
+		LoadText ();
+	}
+	
+	public void LoadText()
+	{
+		titleSettings.GetComponent<Text> ().text = Lang.Get ("game.settings");
+		textLanguage.GetComponent<Text> ().text = Lang.Get("game.language");
+		textVideo.GetComponent<Text> ().text = Lang.Get("game.video");
+		textAudio.GetComponent<Text> ().text = Lang.Get("game.audio");
 		textBackSettings.GetComponent<Text> ().text = Lang.Get("game.back");
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+
 }

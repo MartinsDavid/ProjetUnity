@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AudioScript.cs" />
      <Compile Include="Assets\Scripts\BossController.cs" />
+     <Compile Include="Assets\Scripts\BoxScript.cs" />
      <Compile Include="Assets\Scripts\ClickToContinue.cs" />
      <Compile Include="Assets\Scripts\Collectable.cs" />
      <Compile Include="Assets\Scripts\ControlsScript.cs" />
@@ -64,6 +65,7 @@
      <Compile Include="Assets\Scripts\Language\LanguageMenu.cs" />
      <Compile Include="Assets\Scripts\Language\LanguageSettings.cs" />
      <Compile Include="Assets\Scripts\Language\LanguageVideo.cs" />
+     <Compile Include="Assets\Scripts\LanguageScript.cs" />
      <Compile Include="Assets\Scripts\Menu\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\Menu\ApplicationManager.cs" />
      <Compile Include="Assets\Scripts\Menu\ChangeColor.cs" />

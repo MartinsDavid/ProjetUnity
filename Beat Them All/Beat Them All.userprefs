@@ -1,6 +1,17 @@
 ﻿<Properties StartupItem="Beat Them All.CSharp.csproj">
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SpawnerEnemy.cs">
+    <Files>
+      <File FileName="Assets\Scripts\SpawnerEnemy.cs" Line="262" Column="12" />
+      <File FileName="Assets\Scripts\PauseScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BossController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CreditsScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HeartScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LanguageScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Lang.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

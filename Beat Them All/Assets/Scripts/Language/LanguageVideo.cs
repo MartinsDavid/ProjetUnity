@@ -12,21 +12,20 @@ public class LanguageVideo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
 		titleVideo = GameObject.Find ("TitleVideo");
-		titleVideo.GetComponent<Text> ().text = Lang.Get("game.video");
-
 		textQualityGraphics = GameObject.Find ("TextQualityGraphics");
-		textQualityGraphics.GetComponent<Text> ().text = Lang.Get("game.qualityGraphics");
-
 		textAntiAliasing = GameObject.Find ("TextAntiAliasing");
-		textAntiAliasing.GetComponent<Text> ().text = Lang.Get("game.antiAliasing");
-
 		textFullScreen = GameObject.Find ("TextFullScreen");
-		textFullScreen.GetComponent<Text> ().text = Lang.Get("game.fullScreen");
-
 		textBackVideo = GameObject.Find ("TextBackVideo");
-		textBackVideo.GetComponent<Text> ().text = Lang.Get("game.back");
+		LoadText ();
+	}
 
+	public void LoadText()
+	{
+		titleVideo.GetComponent<Text> ().text = Lang.Get("game.video");
+		textQualityGraphics.GetComponent<Text> ().text = Lang.Get("game.qualityGraphics");
+		textAntiAliasing.GetComponent<Text> ().text = Lang.Get("game.antiAliasing");
+		textFullScreen.GetComponent<Text> ().text = Lang.Get("game.fullScreen");
+		textBackVideo.GetComponent<Text> ().text = Lang.Get("game.back");
 	}
 }
