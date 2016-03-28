@@ -219,7 +219,7 @@ public class PlayerController : MonoBehaviour
                 else if (hit.collider.gameObject.tag == "Boss")
                     hit.collider.GetComponent<BossController>().HitEnemy("Punch");
                 else
-                    hit.collider.GetComponent<BoxScript>().HitBox();
+                    hit.collider.GetComponent<BoxScript>().HitBox("Punch");
             }
         }
     }

@@ -20,9 +20,17 @@ public class BoxScript : MonoBehaviour {
     }
 	
     //When our player hit the box
-    public void HitBox()
+    public void HitBox(string attackName)
     {
-        healthPoint -= 1;
+        switch (attackName)
+        {
+            case "Punch":
+                healthPoint -= 1;
+                break;
+            case "CrescentMoon":
+                healthPoint -= 2;
+                break;
+        }
         if (healthPoint > 0)
             boxAnimator.SetTrigger("gotHit");
         else

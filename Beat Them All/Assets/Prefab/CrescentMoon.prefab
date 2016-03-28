@@ -195,6 +195,10 @@ Prefab:
       propertyPath: speed.y
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: boxTouchedSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a1fdd66144dcff40ab511d656993961, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 155232}

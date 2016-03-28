@@ -200,6 +200,7 @@ MonoBehaviour:
   enemySprite: {fileID: 21290906}
   enemyAnimator: {fileID: 9518762}
   enemyWeapon: {fileID: 469538}
+  cristalPrefab: {fileID: 475384, guid: 5d869bd195510ad49803d0f065a206a5, type: 2}
   enemySpawner: {fileID: 0}
   destructedDroidSound: {fileID: 8300000, guid: adbb610c1cc4b404b95db9305e639cb2,
     type: 3}
@@ -290,6 +291,10 @@ Prefab:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cristalPrefab
+      value: 
+      objectReference: {fileID: 475384, guid: 5d869bd195510ad49803d0f065a206a5, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 122672}

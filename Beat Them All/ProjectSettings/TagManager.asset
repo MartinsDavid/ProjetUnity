@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Spawner
   - Boss
+  - Box
   layers:
   - Default
   - TransparentFX

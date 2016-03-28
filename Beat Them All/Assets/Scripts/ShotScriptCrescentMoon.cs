@@ -44,6 +44,9 @@ public class ShotScriptCrescentMoon : MonoBehaviour
                 AudioSource.PlayClipAtPoint(enemyTouchedSound1, transform.position);
                 Destroy(gameObject);
                 break;
+            case "Box":
+                target.gameObject.GetComponent<BoxScript>().HitBox("CrescentMoon");
+                break;
         }
     }
 }

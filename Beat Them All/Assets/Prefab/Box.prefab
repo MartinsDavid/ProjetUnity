@@ -15,7 +15,7 @@ GameObject:
   - 95: {fileID: 9569368}
   m_Layer: 0
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.48, y: -6.31, z: 0}
+  m_LocalPosition: {x: -10.7, y: -5.59, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -60,9 +60,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.11879476}
   serializedVersion: 2
-  m_Size: {x: 0.73, y: 0.45}
+  m_Size: {x: 0.73, y: 0.5291969}
 --- !u!95 &9569368
 Animator:
   serializedVersion: 3
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hearthPrefab: {fileID: 485138, guid: 57de10ecd5121d445a6e00d3f73a6d50, type: 2}
   boxAnimator: {fileID: 9569368}
-  destructedBoxSound: {fileID: 8300000, guid: adbb610c1cc4b404b95db9305e639cb2, type: 3}
+  destructedBoxSound: {fileID: 8300000, guid: 8a1fdd66144dcff40ab511d656993961, type: 3}
 --- !u!212 &21283104
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -138,7 +138,11 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: destructedBoxSound
       value: 
-      objectReference: {fileID: 8300000, guid: adbb610c1cc4b404b95db9305e639cb2, type: 3}
+      objectReference: {fileID: 8300000, guid: 8a1fdd66144dcff40ab511d656993961, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Box
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 122984}
