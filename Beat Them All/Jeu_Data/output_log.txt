@@ -1,99 +1,79 @@
 Initialize engine version: 5.1.1f1 (2046fc06d4d8)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: AMD Radeon HD 6310 Graphics                                                         (ID=0x9802)
-    Vendor:   ATI
-    VRAM:     248 MB
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: NVIDIA GeForce 210  (ID=0xa65)
+    Vendor:   NVIDIA
+    VRAM:     466 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-Platform assembly: C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.432 seconds
-desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
+Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.080 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
-XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-Platform assembly: C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\System.dll (this message is harmless)
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 52.015022 ms
+Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Jordan\Documents\GitHub\ProjetUnity\Beat Them All\Jeu_Data\Managed\System.dll (this message is harmless)
+NullReferenceException: Object reference not set to an instance of an object
+  at LanguageLanguage.LoadText () [0x00000] in <filename unknown>:0 
+  at LanguageScript.changeLanguage () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.InvokableCall.Invoke (System.Object[] args) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.InvokableCallList.Invoke (System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.UnityEventBase.Invoke (System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.UnityEvent`1[System.Boolean].Invoke (Boolean arg0) [0x00000] in <filename unknown>:0 
+  at UnityEngine.UI.Toggle.Set (Boolean value, Boolean sendCallback) [0x00000] in <filename unknown>:0 
+  at UnityEngine.UI.Toggle.Set (Boolean value) [0x00000] in <filename unknown>:0 
+  at UnityEngine.UI.Toggle.set_isOn (Boolean value) [0x00000] in <filename unknown>:0 
+  at LanguageScript.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
 
-Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 212.
-Total: 0.932997 ms (FindLiveObjects: 0.111296 ms CreateObjectMapping: 0.041045 ms MarkObjects: 0.484653 ms  DeleteObjects: 0.292844 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.018246 ms
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 666.
-Total: 2.069644 ms (FindLiveObjects: 0.174443 ms CreateObjectMapping: 0.089195 ms MarkObjects: 1.759434 ms  DeleteObjects: 0.042624 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.703758 ms
-
-Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 221.
-Total: 0.984304 ms (FindLiveObjects: 0.078933 ms CreateObjectMapping: 0.044992 ms MarkObjects: 0.565166 ms  DeleteObjects: 0.292844 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 6.444157 ms
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 217.
-Total: 0.674884 ms (FindLiveObjects: 0.065515 ms CreateObjectMapping: 0.038677 ms MarkObjects: 0.478338 ms  DeleteObjects: 0.089984 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.089286 ms
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 241.
-Total: 0.821701 ms (FindLiveObjects: 0.071829 ms CreateObjectMapping: 0.046570 ms MarkObjects: 0.655150 ms  DeleteObjects: 0.045781 ms)
+START LANGUAGESETTINGS
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.241022 ms
+UnloadTime: 4.796272 ms
+
+Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 215.
+Total: 0.380735 ms (FindLiveObjects: 0.034453 ms CreateObjectMapping: 0.035620 ms MarkObjects: 0.235915 ms  DeleteObjects: 0.073577 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.155067 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 211.
+Total: 0.183068 ms (FindLiveObjects: 0.009927 ms CreateObjectMapping: 0.012554 ms MarkObjects: 0.138980 ms  DeleteObjects: 0.021022 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.583657 ms
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 235.
+Total: 0.501613 ms (FindLiveObjects: 0.025401 ms CreateObjectMapping: 0.031533 ms MarkObjects: 0.416064 ms  DeleteObjects: 0.026569 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.333157 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 235.
+Total: 0.296938 ms (FindLiveObjects: 0.025109 ms CreateObjectMapping: 0.030365 ms MarkObjects: 0.235915 ms  DeleteObjects: 0.004087 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.436210 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 13d0 -> priority: 1 
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 820.
-Total: 1.622090 ms (FindLiveObjects: 0.162603 ms CreateObjectMapping: 0.115243 ms MarkObjects: 1.296882 ms  DeleteObjects: 0.044992 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 197.
+Total: 0.241463 ms (FindLiveObjects: 0.013138 ms CreateObjectMapping: 0.018686 ms MarkObjects: 0.199710 ms  DeleteObjects: 0.009343 ms)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at PlayerController.Attacking () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at PlayerController.Attacking () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at PlayerController.Attacking () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at PlayerController.Attacking () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at PlayerController.Attacking () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.844683 ms
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 817.
-Total: 1.645770 ms (FindLiveObjects: 0.213121 ms CreateObjectMapping: 0.116032 ms MarkObjects: 1.276359 ms  DeleteObjects: 0.037098 ms)
-
+  Thread -> id: 1a84 -> priority: 1 
